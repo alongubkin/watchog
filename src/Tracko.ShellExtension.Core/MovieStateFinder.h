@@ -5,7 +5,7 @@
 #include "Models.h"
 #include "SharedMemory.h"
 
-class MovieStateFinder
+class MovieStateFinder final
 {
 public:
 	MovieStateFinder();
