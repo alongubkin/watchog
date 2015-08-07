@@ -9,28 +9,28 @@
 
 enum class SharedMemoryAccess : unsigned long
 {
-	Read = FILE_MAP_READ,
-	Write = FILE_MAP_WRITE,
-	ReadWrite = FILE_MAP_READ| FILE_MAP_WRITE
+    Read = FILE_MAP_READ,
+    Write = FILE_MAP_WRITE,
+    ReadWrite = FILE_MAP_READ| FILE_MAP_WRITE
 };
 
 class SharedMemory final
 {
 public:
-	SharedMemory(const std::wstring& name, const SharedMemoryAccess access, const uint64_t size);
-	virtual ~SharedMemory();
-	SharedMemory(const SharedMemory&) = delete;
-	SharedMemory& operator=(const SharedMemory&) = delete;
+    SharedMemory(const std::wstring& name, const SharedMemoryAccess access, const uint64_t size);
+    virtual ~SharedMemory();
+    SharedMemory(const SharedMemory&) = delete;
+    SharedMemory& operator=(const SharedMemory&) = delete;
 
-	template <class T>
-	T* get();
-
-private:
-	static void* map_view_of_file(const FileMapping& file_mapping, const SharedMemoryAccess access);
+    template <class T>
+    T* get();
 
 private:
-	FileMapping _file_mapping;
-	void* _file_view;
+    static void* map_view_of_file(const FileMapping& file_mapping, const SharedMemoryAccess access);
+
+private:
+    FileMapping _file_mapping;
+    void* _file_view;
 };
 
 using SharedMemoryPtr = std::shared_ptr<SharedMemory>;
@@ -38,5 +38,5 @@ using SharedMemoryPtr = std::shared_ptr<SharedMemory>;
 template<class T>
 T* SharedMemory::get()
 {
-	return reinterpret_cast<T*>(_file_view);
+    return reinterpret_cast<T*>(_file_view);
 }

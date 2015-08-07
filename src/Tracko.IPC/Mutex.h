@@ -9,13 +9,13 @@
 class Mutex final : public AutoCloseHandle
 {
 public:
-	Mutex(const std::wstring& name);
-	virtual ~Mutex() = default;
-	Mutex(const Mutex&) = delete;
-	Mutex& operator=(const Mutex&) = delete;
+    Mutex(const std::wstring& name);
+    virtual ~Mutex() = default;
+    Mutex(const Mutex&) = delete;
+    Mutex& operator=(const Mutex&) = delete;
 
 private:
-	static HANDLE create_mutex(const std::wstring& name);
+    static HANDLE create_mutex(const std::wstring& name);
 };
 
 using MutexPtr = std::shared_ptr<Mutex>;
