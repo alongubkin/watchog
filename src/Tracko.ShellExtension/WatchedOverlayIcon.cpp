@@ -37,6 +37,7 @@ CWatchedOverlayIcon::GetOverlayInfo(
 	}
 	catch (...)
 	{
+		// TODO: Log
 		return E_FAIL;
 	}
 }
@@ -91,7 +92,7 @@ CWatchedOverlayIcon::IsMemberOf(
 			return S_FALSE;
 		}
 
-		if (std::wstring::npos != path.find(L".mp4"))
+		if (MovieState::Watched == _tFinder.get_movie_state(path))
 		{
 			return S_OK;
 		}

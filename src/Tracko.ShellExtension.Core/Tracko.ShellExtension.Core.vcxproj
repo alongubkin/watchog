@@ -18,6 +18,22 @@
       <Platform>x64</Platform>
     </ProjectConfiguration>
   </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="AutoCloseHandle.h" />
+    <ClInclude Include="FileMapping.h" />
+    <ClInclude Include="ManualResetEvent.h" />
+    <ClInclude Include="Exceptions.h" />
+    <ClInclude Include="MovieStateFinder.h" />
+    <ClInclude Include="SharedMemory.h" />
+    <ClInclude Include="Models.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="AutoCloseHandle.cpp" />
+    <ClCompile Include="FileMapping.cpp" />
+    <ClCompile Include="ManualResetEvent.cpp" />
+    <ClCompile Include="MovieStateFinder.cpp" />
+    <ClCompile Include="SharedMemory.cpp" />
+  </ItemGroup>
   <PropertyGroup Label="Globals">
     <ProjectGuid>{D9D056CA-3A92-4F69-8A9F-061CF1098A88}</ProjectGuid>
     <Keyword>Win32Proj</Keyword>

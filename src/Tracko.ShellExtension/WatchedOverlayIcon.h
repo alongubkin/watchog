@@ -8,6 +8,8 @@
 #include <shlobj.h>
 #include <comdef.h>
 
+#include "../Tracko.ShellExtension.Core/MovieStateFinder.h"
+
 using namespace ATL;
 
 class ATL_NO_VTABLE CWatchedOverlayIcon :
@@ -59,6 +61,9 @@ public:
 
 	HRESULT FinalConstruct() { return S_OK; }
 	void FinalRelease() {}
+
+private:
+	MovieStateFinder _tFinder;
 };
 
 OBJECT_ENTRY_AUTO(__uuidof(WatchedOverlayIcon), CWatchedOverlayIcon)
