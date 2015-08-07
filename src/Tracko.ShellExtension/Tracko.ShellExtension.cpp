@@ -6,7 +6,6 @@
 #include "TrackoShellExtension_i.h"
 #include "dllmain.h"
 
-
 using namespace ATL;
 
 // Used to determine whether the DLL can be unloaded by OLE.
@@ -25,16 +24,14 @@ STDAPI DllGetClassObject(_In_ REFCLSID rclsid, _In_ REFIID riid, _Outptr_ LPVOID
 // DllRegisterServer - Adds entries to the system registry.
 STDAPI DllRegisterServer(void)
 {
-    // registers object, typelib and all interfaces in typelib
-    HRESULT hr = _AtlModule.DllRegisterServer();
-        return hr;
+    // registers object and all interfaces in typelib
+    return _AtlModule.DllRegisterServer(FALSE);
 }
 
 // DllUnregisterServer - Removes entries from the system registry.
 STDAPI DllUnregisterServer(void)
 {
-    HRESULT hr = _AtlModule.DllUnregisterServer();
-        return hr;
+    return _AtlModule.DllUnregisterServer(FALSE);
 }
 
 // DllInstall - Adds/Removes entries to the system registry per user per machine.

@@ -18,8 +18,7 @@ class ATL_NO_VTABLE CWatchedOverlayIcon :
     public CComCoClass<CWatchedOverlayIcon, &CLSID_WatchedOverlayIcon>,
     public IShellExtInit,
     public IShellIconOverlayIdentifier,
-    public IContextMenu,
-    public IDispatchImpl<IWatchedOverlayIcon, &IID_IWatchedOverlayIcon, &LIBID_TrackoShellExtensionLib, /*wMajor =*/ 1, /*wMinor =*/ 0>
+    public IContextMenu
 {
 private:
     static const uint32_t MINIMUM_PATH_LENGTH = 2;
@@ -33,8 +32,6 @@ public:
     DECLARE_REGISTRY_RESOURCEID(IDR_WATCHEDOVERLAYICON)
 
     BEGIN_COM_MAP(CWatchedOverlayIcon)
-        COM_INTERFACE_ENTRY(IWatchedOverlayIcon)
-        COM_INTERFACE_ENTRY(IDispatch)
         COM_INTERFACE_ENTRY(IShellExtInit)
         COM_INTERFACE_ENTRY(IShellIconOverlayIdentifier)
         COM_INTERFACE_ENTRY(IContextMenu)
@@ -48,7 +45,7 @@ public:
         LPCITEMIDLIST pidlFolder,
         LPDATAOBJECT ptDataObject,
         HKEY hProgID
-    );
+    ) override;
 
     // IShellIconOverlayIdentifier::GetOverlayInfo
     // Returns the overlay icon location to the system.
@@ -57,20 +54,20 @@ public:
         int cchMax, 
         int* piIndex, 
         DWORD* pdwFlags
-    );
+    ) override;
 
     // IShellIconOverlayIdentifier::GetPriority
     // Returns the priority of this overlay 0 being the highest. 
     STDMETHOD(GetPriority)(
         int* piPriority
-    );
+    ) override;
 
     // IShellIconOverlayIdentifier::IsMemberOf
     // Returns whether the object should have this overlay or not.
     STDMETHOD(IsMemberOf)(
         PCWSTR pwszPath, 
         DWORD dwAttrib
-    );
+    ) override;
 
     // IContextMenu::QueryContextMenu
     // Adds commands to a shortcut menu.
@@ -80,7 +77,7 @@ public:
         UINT uidFirstCmd, 
         UINT uidLastCmd, 
         UINT uFlags
-    );
+    ) override;
 
     // IContextMenu::GetCommandString
     // Gets information about a shortcut menu command, including the help string
@@ -91,13 +88,13 @@ public:
         UINT* pwReserved,
         PSTR pszName, 
         UINT cchMax
-    );
+    ) override;
 
     // IContextMenu::InvokeCommand
     // Called when the user clicks on the context menu item.
     STDMETHOD(InvokeCommand)(
         LPCMINVOKECOMMANDINFO ptCmdInfo
-    );
+    ) override;
 
     HRESULT FinalConstruct() { return S_OK; }
     void FinalRelease() {}

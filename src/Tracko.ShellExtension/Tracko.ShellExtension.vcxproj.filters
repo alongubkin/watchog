@@ -74,9 +74,4 @@
       <Filter>Resources</Filter>
     </Image>
   </ItemGroup>
-  <ItemGroup>
-    <Midl Include="TrackoShellExtension.idl">
-      <Filter>ATL Stuff</Filter>
-    </Midl>
-  </ItemGroup>
 </Project>

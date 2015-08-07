@@ -4,13 +4,10 @@ HKCR
     {
         ForceRemove {D729C131-4A94-4A95-B3EE-361E37BA30BE} = s 'WatchedOverlayIcon Class'
         {
-            ForceRemove Programmable
             InprocServer32 = s '%MODULE%'
             {
                 val ThreadingModel = s 'Apartment'
             }
-            TypeLib = s '{5DA6319F-974B-40DA-A02C-0AECDA0BAE1D}'
-            Version = s '1.0'
         }
     }
 

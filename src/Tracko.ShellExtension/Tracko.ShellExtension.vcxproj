@@ -271,9 +271,6 @@
     <None Include="WatchedOverlayIcon.rgs" />
   </ItemGroup>
   <ItemGroup>
-    <Midl Include="TrackoShellExtension.idl" />
-  </ItemGroup>
-  <ItemGroup>
     <Image Include="..\..\..\Users\along\Desktop\1438948500_tick_blue.ico" />
   </ItemGroup>
   <ItemGroup>
