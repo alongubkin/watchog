@@ -5,10 +5,10 @@
 
 enum class MovieState : uint32_t
 {
-	Unknown,
-	NotWatched,
-	Watched,
-	InProgress
+	Unknown = 0,
+	NotWatched = 1,
+	Watched = 2,
+	InProgress = 3
 };
 
 #pragma pack(push)

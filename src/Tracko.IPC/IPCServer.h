@@ -4,6 +4,7 @@
 #include <string>
 
 #include "Models.h"
+#include "Config.h"
 #include "SharedMemory.h"
 #include "IPCPeer.h"
 

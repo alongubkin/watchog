@@ -1,0 +1,27 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <ClInclude Include="resource.h">
+      <Filter>Properties</Filter>
+    </ClInclude>
+    <ClInclude Include="Tracko.IPC.CLRBridge.h">
+      <Filter>CLRBridge</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="AssemblyInfo.cpp">
+      <Filter>Properties</Filter>
+    </ClCompile>
+    <ClCompile Include="Tracko.IPC.CLRBridge.cpp">
+      <Filter>CLRBridge</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <Filter Include="Properties">
+      <UniqueIdentifier>{2dbe4d59-3244-4398-9545-df192abc6f52}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="CLRBridge">
+      <UniqueIdentifier>{4ccd3c38-91b9-4ec9-ad63-5dada8cbd004}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+</Project>
