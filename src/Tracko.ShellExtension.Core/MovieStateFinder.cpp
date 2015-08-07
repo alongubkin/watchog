@@ -4,7 +4,7 @@
 #include "MovieStateFinder.h"
 
 MovieStateFinder::MovieStateFinder() : 
-	_shared_memory(L"TrackoSharedMemory")
+	_shared_memory(L"TrackoSharedMemory", SharedMemoryAccess::Read)
 {}
 
 MovieState MovieStateFinder::get_movie_state(const std::wstring& path) const
