@@ -26,7 +26,7 @@ const MovieState IPCPeer::get_movie_state(const std::wstring& path)
 void IPCPeer::set_movie_state(const std::wstring& path, const MovieState state)
 {
     LockedMutex lock(_mutex, Config::MUTEX_TIMEOUT());
-    auto data = _shared_memory->get<MovieMetadataList>();
+    auto data = _shared_memory->get<MovieListModel>();
 
     // Try to find this movie path in the shared memory. If we can't find it,
     // we need to add a new record to the shared memory movies array.
@@ -52,9 +52,9 @@ void IPCPeer::set_movie_state(const std::wstring& path, const MovieState state)
     movie->state = state;
 }
 
-MovieMetadata* IPCPeer::get_movie_by_path(const std::wstring& path)
+MovieModel* IPCPeer::get_movie_by_path(const std::wstring& path)
 {
-    auto data = _shared_memory->get<MovieMetadataList>();
+    auto data = _shared_memory->get<MovieListModel>();
     for (uint32_t i = 0; i < data->count; i++)
     {
         if (0 == _wcsnicmp(path.c_str(), data->movies[i].path, MAX_PATH))

@@ -5,15 +5,15 @@
       <UniqueIdentifier>{8a0945a5-89cd-4be1-81ab-e78a3fab9fb8}</UniqueIdentifier>
       <SourceControlFiles>False</SourceControlFiles>
     </Filter>
-    <Filter Include="WatchedOverlayIcon">
-      <UniqueIdentifier>{0e1e7398-9d1b-499c-bf84-b41a2860285e}</UniqueIdentifier>
-    </Filter>
     <Filter Include="Resources">
       <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
       <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
     </Filter>
     <Filter Include="ATL Stuff">
       <UniqueIdentifier>{e5f34a69-9692-4ee5-97c4-0f71aea87947}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ShellExtension">
+      <UniqueIdentifier>{0e1e7398-9d1b-499c-bf84-b41a2860285e}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
@@ -27,7 +27,7 @@
       <Filter>ATL Stuff</Filter>
     </ClCompile>
     <ClCompile Include="WatchedOverlayIcon.cpp">
-      <Filter>WatchedOverlayIcon</Filter>
+      <Filter>ShellExtension</Filter>
     </ClCompile>
     <ClCompile Include="dllimpl.cpp">
       <Filter>ATL Stuff</Filter>
@@ -50,7 +50,7 @@
       <Filter>ATL Stuff</Filter>
     </ClInclude>
     <ClInclude Include="WatchedOverlayIcon.h">
-      <Filter>WatchedOverlayIcon</Filter>
+      <Filter>ShellExtension</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
@@ -63,7 +63,7 @@
       <Filter>Resources</Filter>
     </None>
     <None Include="WatchedOverlayIcon.rgs">
-      <Filter>WatchedOverlayIcon</Filter>
+      <Filter>ShellExtension</Filter>
     </None>
     <None Include="ShellExtension.def" />
   </ItemGroup>

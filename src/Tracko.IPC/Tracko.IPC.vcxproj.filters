@@ -1,22 +1,69 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <ItemGroup>
-    <ClInclude Include="AutoCloseHandle.h" />
-    <ClInclude Include="Exceptions.h" />
-    <ClInclude Include="SharedMemory.h" />
-    <ClInclude Include="FileMapping.h" />
-    <ClInclude Include="Models.h" />
-    <ClInclude Include="Config.h" />
-    <ClInclude Include="IPCPeer.h" />
-    <ClInclude Include="Mutex.h" />
-    <ClInclude Include="LockedMutex.h" />
+    <ClInclude Include="Mutex.h">
+      <Filter>Sync</Filter>
+    </ClInclude>
+    <ClInclude Include="LockedMutex.h">
+      <Filter>Sync</Filter>
+    </ClInclude>
+    <ClInclude Include="FileMapping.h">
+      <Filter>IPC Internals</Filter>
+    </ClInclude>
+    <ClInclude Include="SharedMemory.h">
+      <Filter>IPC Internals</Filter>
+    </ClInclude>
+    <ClInclude Include="AutoCloseHandle.h">
+      <Filter>OS</Filter>
+    </ClInclude>
+    <ClInclude Include="Config.h">
+      <Filter>Common</Filter>
+    </ClInclude>
+    <ClInclude Include="Exceptions.h">
+      <Filter>Common</Filter>
+    </ClInclude>
+    <ClInclude Include="Models.h">
+      <Filter>Tracko IPC</Filter>
+    </ClInclude>
+    <ClInclude Include="IPCPeer.h">
+      <Filter>Tracko IPC</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="AutoCloseHandle.cpp" />
-    <ClCompile Include="SharedMemory.cpp" />
-    <ClCompile Include="FileMapping.cpp" />
-    <ClCompile Include="IPCPeer.cpp" />
-    <ClCompile Include="Mutex.cpp" />
-    <ClCompile Include="LockedMutex.cpp" />
+    <ClCompile Include="Mutex.cpp">
+      <Filter>Sync</Filter>
+    </ClCompile>
+    <ClCompile Include="LockedMutex.cpp">
+      <Filter>Sync</Filter>
+    </ClCompile>
+    <ClCompile Include="FileMapping.cpp">
+      <Filter>IPC Internals</Filter>
+    </ClCompile>
+    <ClCompile Include="SharedMemory.cpp">
+      <Filter>IPC Internals</Filter>
+    </ClCompile>
+    <ClCompile Include="AutoCloseHandle.cpp">
+      <Filter>OS</Filter>
+    </ClCompile>
+    <ClCompile Include="IPCPeer.cpp">
+      <Filter>Tracko IPC</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <Filter Include="IPC Internals">
+      <UniqueIdentifier>{f6772784-2990-42d3-bbd8-9ea3b4ff8e3e}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Common">
+      <UniqueIdentifier>{224cfd15-0b5d-4d55-b514-e01204f0f7ef}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="OS">
+      <UniqueIdentifier>{f275650f-fbeb-4bd6-a41b-5b4094951fad}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Tracko IPC">
+      <UniqueIdentifier>{84aa58f2-c1d0-455d-b8b7-bff8acd13350}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Sync">
+      <UniqueIdentifier>{9223a471-fbca-4f26-b0c0-82d373451e3c}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
 </Project>

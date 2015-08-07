@@ -10,7 +10,7 @@
 class IPCPeer final
 {
 private:
-    static const uint32_t MAXIMUM_MOVIE_COUNT = (Config::SHARED_MEMORY_SIZE - sizeof(MovieMetadataList)) / sizeof(MovieMetadata) - 1;
+    static const uint32_t MAXIMUM_MOVIE_COUNT = (Config::SHARED_MEMORY_SIZE - sizeof(MovieListModel)) / sizeof(MovieModel) - 1;
 
 public:
     IPCPeer();
@@ -22,7 +22,7 @@ public:
     void set_movie_state(const std::wstring& path, const MovieState state);
 
 private:
-    MovieMetadata* get_movie_by_path(const std::wstring& path);
+    MovieModel* get_movie_by_path(const std::wstring& path);
     
 private:
     MutexPtr _mutex;
