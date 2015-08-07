@@ -43,7 +43,7 @@ void IPCPeer::set_movie_state(const std::wstring& path, const MovieState state)
 		data->count++;
 
 		// Copy path to the new record
-		if (0 != wcscpy_s(movie->path, sizeof(movie->path), path.c_str()))
+		if (0 != wcscpy_s(movie->path, MAX_PATH, path.c_str()))
 		{
 			throw StringException();
 		}
@@ -58,7 +58,7 @@ MovieMetadata* IPCPeer::get_movie_by_path(const std::wstring& path)
 	auto data = _shared_memory->get<MovieMetadataList>();
 	for (uint32_t i = 0; i < data->count; i++)
 	{
-		if (0 == _wcsnicmp(path.c_str(), data->movies[i].path, sizeof(data->movies[i].path)))
+		if (0 == _wcsnicmp(path.c_str(), data->movies[i].path, MAX_PATH))
 		{
 			return &data->movies[i];
 		}

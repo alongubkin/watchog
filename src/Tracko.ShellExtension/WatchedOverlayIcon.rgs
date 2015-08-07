@@ -13,4 +13,27 @@ HKCR
 			Version = s '1.0'
 		}
 	}
+
+	NoRemove VLC.mp4
+	{
+	    NoRemove ShellEx
+	    {
+			NoRemove ContextMenuHandlers
+			{
+				ForceRemove WatchedOverlayIcon = s '{D729C131-4A94-4A95-B3EE-361E37BA30BE}'
+			}
+		}
+	}
+
+	NoRemove .mkv
+	{
+	    NoRemove ShellEx
+	    {
+			NoRemove ContextMenuHandlers
+			{
+				ForceRemove WatchedOverlayIcon = s '{D729C131-4A94-4A95-B3EE-361E37BA30BE}'
+			}
+		}
+	}
+
 }
