@@ -7,7 +7,6 @@ LockedMutex::LockedMutex(MutexPtr mutex, const std::chrono::milliseconds timeout
 	switch (WaitForSingleObject(mutex->native_handle(), (unsigned long) timeout.count()))
 	{
 	case WAIT_OBJECT_0:
-		// Great success!
 		return;
 
 	case WAIT_FAILED:
