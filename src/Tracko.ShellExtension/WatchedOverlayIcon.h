@@ -8,7 +8,7 @@
 #include <shlobj.h>
 #include <comdef.h>
 
-#include "../Tracko.ShellExtension.Core/MovieStateFinder.h"
+#include "../Tracko.IPC/MovieStateFinder.h"
 
 using namespace ATL;
 

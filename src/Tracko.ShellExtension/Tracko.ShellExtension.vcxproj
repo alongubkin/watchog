@@ -277,7 +277,7 @@
     <Image Include="..\..\..\Users\along\Desktop\1438948500_tick_blue.ico" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\Tracko.ShellExtension.Core\Tracko.ShellExtension.Core.vcxproj">
+    <ProjectReference Include="..\Tracko.IPC\Tracko.IPC.vcxproj">
       <Project>{d9d056ca-3a92-4f69-8a9f-061cf1098a88}</Project>
     </ProjectReference>
   </ItemGroup>
