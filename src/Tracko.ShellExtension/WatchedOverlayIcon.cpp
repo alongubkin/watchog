@@ -21,7 +21,7 @@ CWatchedOverlayIcon::GetOverlayInfo(
 			return E_INVALIDARG;
 		}
 
-		// Get our module's full path
+		// Get current module's full path
 		if (0 == GetModuleFileNameW(_AtlBaseModule.GetModuleInstance(),
 			pwszIconFile,
 			cchMax))
@@ -85,7 +85,7 @@ CWatchedOverlayIcon::IsMemberOf(
 		std::wstring path(pwszPath);
 
 		// The shell sometimes asks overlays for invalid paths, e.g. for network
-		// printers (in that case the path is "0", at least for me here).
+		// printers (in that case the path can be something like "0").
 		if (MINIMUM_PATH_LENGTH >= path.length())
 		{
 			return S_FALSE;
