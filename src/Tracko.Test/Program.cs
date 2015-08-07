@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using Tracko.IPC.CLRBridge;
+using Tracko.IPC;
 using System.Threading;
 
 namespace Tracko.Test
