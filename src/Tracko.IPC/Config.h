@@ -14,5 +14,4 @@ public:
 
 	static const std::wstring MUTEX_NAME() { return L"TrackoMutex"; }
 	static const std::chrono::seconds MUTEX_TIMEOUT() { return std::chrono::seconds(10); }
-
 };

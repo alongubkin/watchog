@@ -6,8 +6,8 @@
 IPCPeer::IPCPeer() :
 	_mutex(std::make_shared<Mutex>(Config::MUTEX_NAME())),
 	_shared_memory(std::make_shared<SharedMemory>(Config::SHARED_MEMORY_NAME(), 
-												  SharedMemoryAccess::ReadWrite, 
-		                                          Config::SHARED_MEMORY_SIZE))
+		SharedMemoryAccess::ReadWrite, 
+		Config::SHARED_MEMORY_SIZE))
 {}
 
 const MovieState IPCPeer::get_movie_state(const std::wstring& path)
