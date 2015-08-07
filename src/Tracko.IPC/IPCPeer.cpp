@@ -33,7 +33,16 @@ void IPCPeer::set_movie_state(const std::wstring& path, const MovieState state)
     MovieModel* movie = get_movie_by_path(path);
     if (nullptr == movie)
     {
-        // Increment the movie pointer to be after the last movie
+        // Don't permit adding a not watched/unknown entries to the memory, as
+        // all files are considered not watched by default.
+        if ((MovieState::NotWatched == state) ||
+            (MovieState::Unknown == state))
+        {
+            return;
+        }
+
+        // Increment the movie pointer to be the first unwatched movie,
+        // or to point to after the last movie in the memory.
         movie = &data->movies[0];
         for (uint32_t i = 0; i < data->count; i++)
         {
