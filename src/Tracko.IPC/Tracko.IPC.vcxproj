@@ -24,8 +24,6 @@
     <ClInclude Include="FileMapping.h" />
     <ClInclude Include="IPCPeer.h" />
     <ClInclude Include="Exceptions.h" />
-    <ClInclude Include="IPCClient.h" />
-    <ClInclude Include="IPCServer.h" />
     <ClInclude Include="LockedMutex.h" />
     <ClInclude Include="Mutex.h" />
     <ClInclude Include="SharedMemory.h" />
@@ -35,8 +33,6 @@
     <ClCompile Include="AutoCloseHandle.cpp" />
     <ClCompile Include="FileMapping.cpp" />
     <ClCompile Include="IPCPeer.cpp" />
-    <ClCompile Include="IPCClient.cpp" />
-    <ClCompile Include="IPCServer.cpp" />
     <ClCompile Include="LockedMutex.cpp" />
     <ClCompile Include="Mutex.cpp" />
     <ClCompile Include="SharedMemory.cpp" />

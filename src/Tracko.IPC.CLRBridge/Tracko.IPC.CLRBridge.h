@@ -2,7 +2,7 @@
 
 #pragma once
 
-#include "../Tracko.IPC/IPCServer.h"
+#include "../Tracko.IPC/IPCPeer.h"
 
 namespace Tracko
 {
@@ -19,12 +19,12 @@ namespace Tracko
 				InProgress = 3
 			};
 
-			public ref class IPCServer
+			public ref class IPCPeer
 			{
 			public:
-				IPCServer() { _server = new ::IPCServer(); }
-				~IPCServer() { this->!IPCServer(); }
-				!IPCServer() { delete _server; }
+				IPCPeer() { _peer = new ::IPCPeer(); }
+				~IPCPeer() { this->!IPCPeer(); }
+				!IPCPeer() { delete _peer; }
 
 				void SetMovieState(System::String^ path, MovieState state)
 				{
@@ -33,7 +33,7 @@ namespace Tracko
 					
 					try
 					{
-						_server->set_movie_state(native_path, static_cast<::MovieState>(state));
+						_peer->set_movie_state(native_path, static_cast<::MovieState>(state));
 					}
 					finally
 					{
@@ -48,7 +48,7 @@ namespace Tracko
 
 					try
 					{
-						return static_cast<MovieState>(_server->get_movie_state(native_path));
+						return static_cast<MovieState>(_peer->get_movie_state(native_path));
 					}
 					finally
 					{
@@ -57,7 +57,7 @@ namespace Tracko
 				}
 
 			private:
-				::IPCServer* _server;
+				::IPCPeer* _peer;
 			};
 		}
 	}

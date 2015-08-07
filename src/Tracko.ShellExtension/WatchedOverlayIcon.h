@@ -8,7 +8,7 @@
 #include <shlobj.h>
 #include <comdef.h>
 
-#include "../Tracko.IPC/IPCClient.h"
+#include "../Tracko.IPC/IPCPeer.h"
 
 using namespace ATL;
 
@@ -63,7 +63,7 @@ public:
 	void FinalRelease() {}
 
 private:
-	IPCClient _tIPCClient;
+	IPCPeer _tIPC;
 };
 
 OBJECT_ENTRY_AUTO(__uuidof(WatchedOverlayIcon), CWatchedOverlayIcon)

@@ -12,7 +12,7 @@ namespace Tracko.Test
     {
         static void Main(string[] args)
         {
-            using (var server = new IPCServer())
+            using (var server = new IPCPeer())
             {
                 server.SetMovieState(@"D:\TV\The.Flash.2014.S01E02.HDTV.x264-LOL.mp4", 
                     MovieState.Watched);

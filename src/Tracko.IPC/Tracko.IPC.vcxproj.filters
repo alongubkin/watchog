@@ -6,10 +6,8 @@
     <ClInclude Include="SharedMemory.h" />
     <ClInclude Include="FileMapping.h" />
     <ClInclude Include="Models.h" />
-    <ClInclude Include="IPCServer.h" />
     <ClInclude Include="Config.h" />
     <ClInclude Include="IPCPeer.h" />
-    <ClInclude Include="IPCClient.h" />
     <ClInclude Include="Mutex.h" />
     <ClInclude Include="LockedMutex.h" />
   </ItemGroup>
@@ -17,9 +15,7 @@
     <ClCompile Include="AutoCloseHandle.cpp" />
     <ClCompile Include="SharedMemory.cpp" />
     <ClCompile Include="FileMapping.cpp" />
-    <ClCompile Include="IPCServer.cpp" />
     <ClCompile Include="IPCPeer.cpp" />
-    <ClCompile Include="IPCClient.cpp" />
     <ClCompile Include="Mutex.cpp" />
     <ClCompile Include="LockedMutex.cpp" />
   </ItemGroup>
