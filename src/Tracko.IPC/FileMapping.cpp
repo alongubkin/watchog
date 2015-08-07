@@ -2,7 +2,8 @@
 #include "FileMapping.h"
 
 FileMapping::FileMapping(const std::wstring& name, const uint64_t size) :
-    AutoCloseHandle(create_file_mapping(name, size))
+    AutoCloseHandle(create_file_mapping(name, size)),
+    _size(size)
 {}
 
 HANDLE FileMapping::create_file_mapping(const std::wstring& name, const uint64_t size)

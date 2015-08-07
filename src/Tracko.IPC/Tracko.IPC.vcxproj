@@ -25,8 +25,8 @@
     <ClInclude Include="IPCPeer.h" />
     <ClInclude Include="Exceptions.h" />
     <ClInclude Include="LockedMutex.h" />
+    <ClInclude Include="MappedViewOfFile.h" />
     <ClInclude Include="Mutex.h" />
-    <ClInclude Include="SharedMemory.h" />
     <ClInclude Include="Models.h" />
   </ItemGroup>
   <ItemGroup>
@@ -34,8 +34,8 @@
     <ClCompile Include="FileMapping.cpp" />
     <ClCompile Include="IPCPeer.cpp" />
     <ClCompile Include="LockedMutex.cpp" />
+    <ClCompile Include="MappedViewOfFile.cpp" />
     <ClCompile Include="Mutex.cpp" />
-    <ClCompile Include="SharedMemory.cpp" />
   </ItemGroup>
   <PropertyGroup Label="Globals">
     <ProjectGuid>{D9D056CA-3A92-4F69-8A9F-061CF1098A88}</ProjectGuid>

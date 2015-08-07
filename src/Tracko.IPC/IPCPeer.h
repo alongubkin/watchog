@@ -3,7 +3,7 @@
 #include <string>
 
 #include "Config.h"
-#include "SharedMemory.h"
+#include "MappedViewOfFile.h"
 #include "Models.h"
 #include "Mutex.h"
 
@@ -23,6 +23,7 @@ private:
     
 private:
     MutexPtr _mutex;
-    SharedMemoryPtr _shared_memory;
+    FileMappingPtr _file_mapping;
+    MappedViewOfFilePtr _shared_memory;
 };
 

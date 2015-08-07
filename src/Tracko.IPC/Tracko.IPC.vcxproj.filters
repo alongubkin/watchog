@@ -10,9 +10,6 @@
     <ClInclude Include="FileMapping.h">
       <Filter>IPC Internals</Filter>
     </ClInclude>
-    <ClInclude Include="SharedMemory.h">
-      <Filter>IPC Internals</Filter>
-    </ClInclude>
     <ClInclude Include="AutoCloseHandle.h">
       <Filter>OS</Filter>
     </ClInclude>
@@ -28,6 +25,9 @@
     <ClInclude Include="IPCPeer.h">
       <Filter>Tracko IPC</Filter>
     </ClInclude>
+    <ClInclude Include="MappedViewOfFile.h">
+      <Filter>IPC Internals</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Mutex.cpp">
@@ -39,14 +39,14 @@
     <ClCompile Include="FileMapping.cpp">
       <Filter>IPC Internals</Filter>
     </ClCompile>
-    <ClCompile Include="SharedMemory.cpp">
-      <Filter>IPC Internals</Filter>
-    </ClCompile>
     <ClCompile Include="AutoCloseHandle.cpp">
       <Filter>OS</Filter>
     </ClCompile>
     <ClCompile Include="IPCPeer.cpp">
       <Filter>Tracko IPC</Filter>
+    </ClCompile>
+    <ClCompile Include="MappedViewOfFile.cpp">
+      <Filter>IPC Internals</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>

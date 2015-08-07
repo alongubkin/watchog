@@ -5,16 +5,15 @@
 
 IPCPeer::IPCPeer() :
     _mutex(std::make_shared<Mutex>(Config::MUTEX_NAME())),
-    _shared_memory(std::make_shared<SharedMemory>(Config::SHARED_MEMORY_NAME(), 
-                                                  SharedMemoryAccess::ReadWrite, 
-                                                  Config::SHARED_MEMORY_SIZE))
+    _file_mapping(std::make_shared<FileMapping>(Config::SHARED_MEMORY_NAME(), Config::SHARED_MEMORY_SIZE)),
+    _shared_memory(std::make_shared<MappedViewOfFile>(_file_mapping, MappedViewOfFile::Access::ReadWrite))
 {}
 
 const MovieState IPCPeer::get_movie_state(const std::wstring& path)
 {    
     LockedMutex lock(_mutex, Config::MUTEX_TIMEOUT());
 
-    auto movie = get_movie_by_path(path);
+    MovieModel* movie = get_movie_by_path(path);
     if (nullptr == movie)
     {
         return MovieState::Unknown;
@@ -53,7 +52,8 @@ void IPCPeer::set_movie_state(const std::wstring& path, const MovieState state)
         size_t movie_as_size = reinterpret_cast<size_t>(movie);
         size_t shared_memory_as_size = reinterpret_cast<size_t>(data);
         if ((movie_as_size < shared_memory_as_size) ||
-            (movie_as_size + sizeof(MovieModel) + path.size() * sizeof(wchar_t) >= shared_memory_as_size + _shared_memory->get_size()))
+            (movie_as_size + sizeof(MovieModel) + path.size() * sizeof(wchar_t) >= 
+                shared_memory_as_size + _file_mapping->get_size()))
         {
             throw InsufficientSharedMemoryException();
         }

@@ -1,18 +1,18 @@
 #include "Exceptions.h"
-#include "SharedMemory.h"
+#include "MappedViewOfFile.h"
 
-SharedMemory::SharedMemory(const std::wstring& name, const SharedMemoryAccess access, const uint64_t size) :
-    _file_mapping(name, size),
+MappedViewOfFile::MappedViewOfFile(FileMappingPtr file_mapping, const Access access) :
+    _file_mapping(file_mapping),
     _file_view(map_view_of_file(_file_mapping, access))
 {}
 
-void* SharedMemory::map_view_of_file(const FileMapping& file_mapping, const SharedMemoryAccess access)
+void* MappedViewOfFile::map_view_of_file(FileMappingPtr file_mapping, const Access access)
 {
     static const unsigned long FILE_BEGIN_OFFSET_HIGH = 0;
     static const unsigned long FILE_BEGIN_OFFSET_LOW = 0;
     static const size_t MAP_ALL_FILE = 0;
 
-    void* file_view = MapViewOfFile(file_mapping.native_handle(),
+    void* file_view = MapViewOfFile(file_mapping->native_handle(),
                                     static_cast<unsigned long>(access),
                                     FILE_BEGIN_OFFSET_HIGH,
                                     FILE_BEGIN_OFFSET_LOW,
@@ -25,7 +25,7 @@ void* SharedMemory::map_view_of_file(const FileMapping& file_mapping, const Shar
     return file_view;
 }
 
-SharedMemory::~SharedMemory()
+MappedViewOfFile::~MappedViewOfFile()
 {
     try
     {
