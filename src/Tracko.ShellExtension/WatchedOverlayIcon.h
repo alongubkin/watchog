@@ -8,7 +8,7 @@
 #include <shlobj.h>
 #include <comdef.h>
 
-#include "../Tracko.IPC/MovieStateFinder.h"
+#include "../Tracko.IPC/IPCClient.h"
 
 using namespace ATL;
 
@@ -63,7 +63,7 @@ public:
 	void FinalRelease() {}
 
 private:
-	MovieStateFinder _tFinder;
+	IPCClient _tIPCClient;
 };
 
 OBJECT_ENTRY_AUTO(__uuidof(WatchedOverlayIcon), CWatchedOverlayIcon)

@@ -3,17 +3,24 @@
   <ItemGroup>
     <ClInclude Include="AutoCloseHandle.h" />
     <ClInclude Include="Exceptions.h" />
-    <ClInclude Include="ManualResetEvent.h" />
     <ClInclude Include="SharedMemory.h" />
     <ClInclude Include="FileMapping.h" />
-    <ClInclude Include="MovieStateFinder.h" />
     <ClInclude Include="Models.h" />
+    <ClInclude Include="IPCServer.h" />
+    <ClInclude Include="Config.h" />
+    <ClInclude Include="IPCPeer.h" />
+    <ClInclude Include="IPCClient.h" />
+    <ClInclude Include="Mutex.h" />
+    <ClInclude Include="LockedMutex.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="AutoCloseHandle.cpp" />
-    <ClCompile Include="ManualResetEvent.cpp" />
     <ClCompile Include="SharedMemory.cpp" />
     <ClCompile Include="FileMapping.cpp" />
-    <ClCompile Include="MovieStateFinder.cpp" />
+    <ClCompile Include="IPCServer.cpp" />
+    <ClCompile Include="IPCPeer.cpp" />
+    <ClCompile Include="IPCClient.cpp" />
+    <ClCompile Include="Mutex.cpp" />
+    <ClCompile Include="LockedMutex.cpp" />
   </ItemGroup>
 </Project>

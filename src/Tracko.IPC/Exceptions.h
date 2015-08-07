@@ -24,10 +24,36 @@ private:
 class TimeoutException final : public std::exception
 {
 public:
-	TimeoutException() : std::exception()
-	{}
+	TimeoutException() = default;
 	virtual ~TimeoutException() = default;
 	TimeoutException(const TimeoutException&) = default;
 	TimeoutException& operator=(const TimeoutException&) = delete;
+};
+
+class InsufficientSharedMemoryException final : public std::exception
+{
+public:
+	InsufficientSharedMemoryException() = default;
+	virtual ~InsufficientSharedMemoryException() = default;
+	InsufficientSharedMemoryException(const InsufficientSharedMemoryException&) = default;
+	InsufficientSharedMemoryException& operator=(const InsufficientSharedMemoryException&) = delete;
+};
+
+class StringException final : public std::exception
+{
+public:
+	StringException() = default;
+	virtual ~StringException() = default;
+	StringException(const StringException&) = default;
+	StringException& operator=(const StringException&) = delete;
+};
+
+class AbandonedMutexException final : public std::exception
+{
+public:
+	AbandonedMutexException() = default;
+	virtual ~AbandonedMutexException() = default;
+	AbandonedMutexException(const AbandonedMutexException&) = default;
+	AbandonedMutexException& operator=(const AbandonedMutexException&) = delete;
 };
 

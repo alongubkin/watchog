@@ -5,6 +5,7 @@
 
 enum class MovieState : uint32_t
 {
+	Unknown,
 	NotWatched,
 	Watched,
 	InProgress

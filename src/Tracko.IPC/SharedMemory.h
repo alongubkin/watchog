@@ -10,7 +10,8 @@
 enum class SharedMemoryAccess : unsigned long
 {
 	Read = FILE_MAP_READ,
-	Write = FILE_MAP_WRITE
+	Write = FILE_MAP_WRITE,
+	ReadWrite = FILE_MAP_READ| FILE_MAP_WRITE
 };
 
 class SharedMemory final
@@ -23,18 +24,20 @@ public:
 	SharedMemory& operator=(const SharedMemory&) = delete;
 
 	template <class T>
-	const T* get() const;
+	T* get();
 
 private:
-	static const void* map_view_of_file(const FileMapping& file_mapping, const SharedMemoryAccess access);
+	static void* map_view_of_file(const FileMapping& file_mapping, const SharedMemoryAccess access);
 
 private:
 	FileMapping _file_mapping;
-	const void* _file_view;
+	void* _file_view;
 };
 
+using SharedMemoryPtr = std::shared_ptr<SharedMemory>;
+
 template<class T>
-const T* SharedMemory::get() const
+T* SharedMemory::get()
 {
-	return reinterpret_cast<const T*>(_file_view);
+	return reinterpret_cast<T*>(_file_view);
 }

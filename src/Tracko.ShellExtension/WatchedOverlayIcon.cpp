@@ -92,7 +92,7 @@ CWatchedOverlayIcon::IsMemberOf(
 			return S_FALSE;
 		}
 
-		if (MovieState::Watched == _tFinder.get_movie_state(path))
+		if (MovieState::Watched == _tIPCClient.get_movie_state(path))
 		{
 			return S_OK;
 		}

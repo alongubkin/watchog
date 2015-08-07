@@ -11,7 +11,7 @@ FileMapping::FileMapping(const std::wstring& name, const uint64_t size) :
 
 HANDLE FileMapping::open_file_mapping(const std::wstring& name)
 {
-	static const BOOL NO_HANDLE_INHERITANCE = FALSE;
+	static const BOOL NO_HANDLE_INHERITANCE = false;
 
 	HANDLE handle = OpenFileMappingW(FILE_MAP_READ, NO_HANDLE_INHERITANCE, name.c_str());
 	if (NULL == handle)
