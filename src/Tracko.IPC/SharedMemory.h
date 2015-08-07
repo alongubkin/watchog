@@ -17,7 +17,6 @@ enum class SharedMemoryAccess : unsigned long
 class SharedMemory final
 {
 public:
-	SharedMemory(const std::wstring& name, const SharedMemoryAccess access);
 	SharedMemory(const std::wstring& name, const SharedMemoryAccess access, const uint64_t size);
 	virtual ~SharedMemory();
 	SharedMemory(const SharedMemory&) = delete;

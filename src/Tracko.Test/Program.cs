@@ -14,8 +14,12 @@ namespace Tracko.Test
         {
             using (var server = new IPCServer())
             {
-                server.SetMovieState("Test", MovieState.Watched);
-                Console.WriteLine(server.GetMovieState("Test"));
+                server.SetMovieState(@"D:\TV\The.Flash.2014.S01E02.HDTV.x264-LOL.mp4", 
+                    MovieState.Watched);
+                server.SetMovieState(@"D:\TV\Game.of.Thrones.S05E04.HDTV.x264-Xclusive4iPT.mp4",
+                    MovieState.Watched);
+                Console.WriteLine(server.GetMovieState(@"D:\TV\The.Flash.2014.S01E02.HDTV.x264-LOL.mp4"));
+                Console.ReadLine();
             }
         }
     }

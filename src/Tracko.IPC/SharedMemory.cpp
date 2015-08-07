@@ -1,11 +1,6 @@
 #include "Exceptions.h"
 #include "SharedMemory.h"
 
-SharedMemory::SharedMemory(const std::wstring& name, const SharedMemoryAccess access) :
-	_file_mapping(name),
-	_file_view(map_view_of_file(_file_mapping, access))
-{}
-
 SharedMemory::SharedMemory(const std::wstring& name, const SharedMemoryAccess access, const uint64_t size) :
 	_file_mapping(name, size),
 	_file_view(map_view_of_file(_file_mapping, access))
