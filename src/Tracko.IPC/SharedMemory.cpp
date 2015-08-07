@@ -13,15 +13,15 @@ void* SharedMemory::map_view_of_file(const FileMapping& file_mapping, const Shar
 	static const size_t MAP_ALL_FILE = 0;
 
 	void* file_view = MapViewOfFile(file_mapping.native_handle(),
-				 					static_cast<unsigned long>(access),
-									FILE_BEGIN_OFFSET_HIGH,
-									FILE_BEGIN_OFFSET_LOW,
-									MAP_ALL_FILE);
+		static_cast<unsigned long>(access),
+		FILE_BEGIN_OFFSET_HIGH,
+		FILE_BEGIN_OFFSET_LOW,
+		MAP_ALL_FILE);
 	if (nullptr == file_view)
 	{
 		throw WindowsException(GetLastError());
 	}
-	
+
 	return file_view;
 }
 
