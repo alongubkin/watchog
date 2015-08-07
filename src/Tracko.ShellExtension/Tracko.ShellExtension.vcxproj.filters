@@ -26,11 +26,11 @@
     <ClCompile Include="stdafx.cpp">
       <Filter>ATL Stuff</Filter>
     </ClCompile>
-    <ClCompile Include="Tracko.ShellExtension.cpp">
-      <Filter>ATL Stuff</Filter>
-    </ClCompile>
     <ClCompile Include="WatchedOverlayIcon.cpp">
       <Filter>WatchedOverlayIcon</Filter>
+    </ClCompile>
+    <ClCompile Include="dllimpl.cpp">
+      <Filter>ATL Stuff</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -62,12 +62,10 @@
     <None Include="Tracko.ShellExtension.rgs">
       <Filter>Resources</Filter>
     </None>
-    <None Include="Tracko.ShellExtension.def">
-      <Filter>ATL Stuff</Filter>
-    </None>
     <None Include="WatchedOverlayIcon.rgs">
       <Filter>WatchedOverlayIcon</Filter>
     </None>
+    <None Include="ShellExtension.def" />
   </ItemGroup>
   <ItemGroup>
     <Image Include="..\..\..\Users\along\Desktop\1438948500_tick_blue.ico">
