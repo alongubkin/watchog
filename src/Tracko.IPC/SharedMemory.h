@@ -24,6 +24,8 @@ public:
 
     template <class T>
     T* get();
+    
+    uint64_t get_size() { return _size; }
 
 private:
     static void* map_view_of_file(const FileMapping& file_mapping, const SharedMemoryAccess access);
@@ -31,6 +33,7 @@ private:
 private:
     FileMapping _file_mapping;
     void* _file_view;
+    uint64_t _size;
 };
 
 using SharedMemoryPtr = std::shared_ptr<SharedMemory>;

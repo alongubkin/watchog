@@ -15,8 +15,8 @@ enum class MovieState : uint32_t
 #pragma pack(1)
 struct MovieModel
 {
-    wchar_t path[MAX_PATH + 1];
     MovieState state;
+    wchar_t path[ANYSIZE_ARRAY];
 };
 
 struct MovieListModel

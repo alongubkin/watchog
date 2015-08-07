@@ -9,9 +9,6 @@
 
 class IPCPeer final
 {
-private:
-    static const uint32_t MAXIMUM_MOVIE_COUNT = (Config::SHARED_MEMORY_SIZE - sizeof(MovieListModel)) / sizeof(MovieModel) - 1;
-
 public:
     IPCPeer();
     virtual ~IPCPeer() = default;

@@ -30,23 +30,32 @@ void IPCPeer::set_movie_state(const std::wstring& path, const MovieState state)
 
     // Try to find this movie path in the shared memory. If we can't find it,
     // we need to add a new record to the shared memory movies array.
-    auto movie = get_movie_by_path(path);
+    MovieModel* movie = get_movie_by_path(path);
     if (nullptr == movie)
     {
-        // Make sure we are within the shared memory bounds
-        if (MAXIMUM_MOVIE_COUNT < data->count + 1)
+        // Increment the movie pointer to be after the last movie
+        movie = &data->movies[0];
+        for (uint32_t i = 0; i < data->count; i++)
+        {
+            movie = reinterpret_cast<MovieModel*>((size_t) movie + sizeof(*movie) + (wcslen(movie->path) + 1) * sizeof(wchar_t));
+        }
+
+        // Make sure the movie pointer is within the shared memory range
+        size_t movie_as_size = reinterpret_cast<size_t>(movie);
+        size_t shared_memory_as_size = reinterpret_cast<size_t>(data);
+        if ((movie_as_size < shared_memory_as_size) ||
+            (movie_as_size + sizeof(MovieModel) + path.size() * sizeof(wchar_t) >= shared_memory_as_size + _shared_memory->get_size()))
         {
             throw InsufficientSharedMemoryException();
         }
-
-        movie = &data->movies[data->count];
-        data->count++;
 
         // Copy path to the new record
         if (0 != wcscpy_s(movie->path, MAX_PATH, path.c_str()))
         {
             throw StringException();
         }
+
+        data->count++;
     }
 
     movie->state = state;
@@ -55,12 +64,17 @@ void IPCPeer::set_movie_state(const std::wstring& path, const MovieState state)
 MovieModel* IPCPeer::get_movie_by_path(const std::wstring& path)
 {
     auto data = _shared_memory->get<MovieListModel>();
+
+    MovieModel* movie = &data->movies[0];
     for (uint32_t i = 0; i < data->count; i++)
     {
-        if (0 == _wcsnicmp(path.c_str(), data->movies[i].path, MAX_PATH))
+        if (0 == _wcsnicmp(path.c_str(), movie->path, MAX_PATH))
         {
-            return &data->movies[i];
+            return movie;
         }
+
+        // Continue to the next movie
+        movie = reinterpret_cast<MovieModel*>((size_t)movie + sizeof(*movie) + (wcslen(movie->path) + 1) * sizeof(wchar_t));
     }
 
     return nullptr;
