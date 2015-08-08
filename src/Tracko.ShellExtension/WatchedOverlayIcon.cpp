@@ -333,7 +333,7 @@ CWatchedOverlayIcon::InvokeCommand(
                 }
                 
                 // Refresh file
-                SHChangeNotify(SHCNE_UPDATEITEM, SHCNF_PATH, tPath.c_str(), NULL);
+                SHChangeNotify(SHCNE_UPDATEITEM, SHCNF_PATH, tPath.c_str(), nullptr);
             }
             
             return S_OK;

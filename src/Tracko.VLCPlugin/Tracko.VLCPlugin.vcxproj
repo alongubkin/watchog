@@ -72,22 +72,22 @@
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <LinkIncremental>true</LinkIncremental>
     <TargetName>libtracko_plugin</TargetName>
-    <OutDir>C:\Program Files\VideoLAN\VLC\plugins\misc</OutDir>
+    <OutDir>C:\Program Files\VideoLAN\VLC\plugins\misc\</OutDir>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
     <LinkIncremental>true</LinkIncremental>
     <TargetName>libtracko_plugin</TargetName>
-    <OutDir>C:\Program Files\VideoLAN\VLC\plugins\misc</OutDir>
+    <OutDir>C:\Program Files\VideoLAN\VLC\plugins\misc\</OutDir>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
     <LinkIncremental>false</LinkIncremental>
     <TargetName>libtracko_plugin</TargetName>
-    <OutDir>C:\Program Files\VideoLAN\VLC\plugins\misc</OutDir>
+    <OutDir>C:\Program Files\VideoLAN\VLC\plugins\misc\</OutDir>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
     <LinkIncremental>false</LinkIncremental>
     <TargetName>libtracko_plugin</TargetName>
-    <OutDir>C:\Program Files\VideoLAN\VLC\plugins\misc</OutDir>
+    <OutDir>C:\Program Files\VideoLAN\VLC\plugins\misc\</OutDir>
   </PropertyGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <ClCompile>
@@ -163,10 +163,18 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="PluginState.cpp" />
     <ClCompile Include="VLCPlugin.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="PluginState.h" />
+    <ClInclude Include="vlc_includes.h" />
     <ClInclude Include="vlc_interface.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Tracko.IPC\Tracko.IPC.vcxproj">
+      <Project>{d9d056ca-3a92-4f69-8a9f-061cf1098a88}</Project>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
