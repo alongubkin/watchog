@@ -1,3 +1,0 @@
-LIBRARY
-EXPORTS
-    luaopen_tracko_lua_ipc      @1

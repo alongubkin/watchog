@@ -11,7 +11,7 @@ Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Tracko.IPC.CLRBridge", "Tra
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Tracko.Test", "Tracko.Test\Tracko.Test.csproj", "{AAEAC4C9-BB91-45D6-942A-CD184E691148}"
 EndProject
-Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Tracko.IPC.LuaBridge", "Tracko.IPC.LuaBridge\Tracko.IPC.LuaBridge.vcxproj", "{B06C3AB5-7A75-4BF8-A9B7-1D8F7FFCE801}"
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Tracko.VLCPlugin", "Tracko.VLCPlugin\Tracko.VLCPlugin.vcxproj", "{5652A337-BA9C-4F45-AA4A-E4DAD202B5D3}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -65,16 +65,16 @@ Global
 		{AAEAC4C9-BB91-45D6-942A-CD184E691148}.Release|x64.Build.0 = Release|Any CPU
 		{AAEAC4C9-BB91-45D6-942A-CD184E691148}.Release|x86.ActiveCfg = Release|Any CPU
 		{AAEAC4C9-BB91-45D6-942A-CD184E691148}.Release|x86.Build.0 = Release|Any CPU
-		{B06C3AB5-7A75-4BF8-A9B7-1D8F7FFCE801}.Debug|Any CPU.ActiveCfg = Debug|Win32
-		{B06C3AB5-7A75-4BF8-A9B7-1D8F7FFCE801}.Debug|x64.ActiveCfg = Debug|x64
-		{B06C3AB5-7A75-4BF8-A9B7-1D8F7FFCE801}.Debug|x64.Build.0 = Debug|x64
-		{B06C3AB5-7A75-4BF8-A9B7-1D8F7FFCE801}.Debug|x86.ActiveCfg = Debug|Win32
-		{B06C3AB5-7A75-4BF8-A9B7-1D8F7FFCE801}.Debug|x86.Build.0 = Debug|Win32
-		{B06C3AB5-7A75-4BF8-A9B7-1D8F7FFCE801}.Release|Any CPU.ActiveCfg = Release|Win32
-		{B06C3AB5-7A75-4BF8-A9B7-1D8F7FFCE801}.Release|x64.ActiveCfg = Release|x64
-		{B06C3AB5-7A75-4BF8-A9B7-1D8F7FFCE801}.Release|x64.Build.0 = Release|x64
-		{B06C3AB5-7A75-4BF8-A9B7-1D8F7FFCE801}.Release|x86.ActiveCfg = Release|Win32
-		{B06C3AB5-7A75-4BF8-A9B7-1D8F7FFCE801}.Release|x86.Build.0 = Release|Win32
+		{5652A337-BA9C-4F45-AA4A-E4DAD202B5D3}.Debug|Any CPU.ActiveCfg = Debug|Win32
+		{5652A337-BA9C-4F45-AA4A-E4DAD202B5D3}.Debug|x64.ActiveCfg = Debug|x64
+		{5652A337-BA9C-4F45-AA4A-E4DAD202B5D3}.Debug|x64.Build.0 = Debug|x64
+		{5652A337-BA9C-4F45-AA4A-E4DAD202B5D3}.Debug|x86.ActiveCfg = Debug|Win32
+		{5652A337-BA9C-4F45-AA4A-E4DAD202B5D3}.Debug|x86.Build.0 = Debug|Win32
+		{5652A337-BA9C-4F45-AA4A-E4DAD202B5D3}.Release|Any CPU.ActiveCfg = Release|Win32
+		{5652A337-BA9C-4F45-AA4A-E4DAD202B5D3}.Release|x64.ActiveCfg = Release|x64
+		{5652A337-BA9C-4F45-AA4A-E4DAD202B5D3}.Release|x64.Build.0 = Release|x64
+		{5652A337-BA9C-4F45-AA4A-E4DAD202B5D3}.Release|x86.ActiveCfg = Release|Win32
+		{5652A337-BA9C-4F45-AA4A-E4DAD202B5D3}.Release|x86.Build.0 = Release|Win32
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
