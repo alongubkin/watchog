@@ -68,7 +68,7 @@
     <None Include="ShellExtension.def" />
   </ItemGroup>
   <ItemGroup>
-    <Image Include="..\..\..\Users\along\Desktop\1438948500_tick_blue.ico">
+    <Image Include="watched_icon.ico">
       <Filter>Resources</Filter>
     </Image>
   </ItemGroup>

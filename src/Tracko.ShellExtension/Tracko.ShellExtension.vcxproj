@@ -271,12 +271,12 @@
     <None Include="WatchedOverlayIcon.rgs" />
   </ItemGroup>
   <ItemGroup>
-    <Image Include="..\..\..\Users\along\Desktop\1438948500_tick_blue.ico" />
-  </ItemGroup>
-  <ItemGroup>
     <ProjectReference Include="..\Tracko.IPC\Tracko.IPC.vcxproj">
       <Project>{d9d056ca-3a92-4f69-8a9f-061cf1098a88}</Project>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Image Include="watched_icon.ico" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
