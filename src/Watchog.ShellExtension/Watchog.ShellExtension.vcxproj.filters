@@ -17,7 +17,7 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="TrackoShellExtension_i.c">
+    <ClCompile Include="WatchogShellExtension_i.c">
       <Filter>Generated Files</Filter>
     </ClCompile>
     <ClCompile Include="dllmain.cpp">
@@ -34,7 +34,7 @@
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="TrackoShellExtension_i.h">
+    <ClInclude Include="WatchogShellExtension_i.h">
       <Filter>Generated Files</Filter>
     </ClInclude>
     <ClInclude Include="dllmain.h">
@@ -54,12 +54,12 @@
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
-    <ResourceCompile Include="Tracko.ShellExtension.rc">
+    <ResourceCompile Include="Watchog.ShellExtension.rc">
       <Filter>Resources</Filter>
     </ResourceCompile>
   </ItemGroup>
   <ItemGroup>
-    <None Include="Tracko.ShellExtension.rgs">
+    <None Include="Watchog.ShellExtension.rgs">
       <Filter>Resources</Filter>
     </None>
     <None Include="WatchedOverlayIcon.rgs">

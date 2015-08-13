@@ -49,7 +49,7 @@ OnPlayingItemUpdated(
 
         // If there are less than 30 seconds to the movie, mark it
         // as watched.
-        if (30 > time_left_in_seconds)
+        if (77 > time_left_in_seconds)
         {
             plugin_interface->p_sys->state.mark_as_watched();
         }
@@ -172,8 +172,8 @@ static void OnPluginEnd(vlc_object_t* plugin)
 }
 
 vlc_module_begin()
-    set_shortname("Tracko")
-    set_description("Tracko")
+    set_shortname("Watchog")
+    set_description("Watchog")
     set_category(CAT_INTERFACE)
     set_subcategory(SUBCAT_INTERFACE_CONTROL)
     set_capability("interface", 0)

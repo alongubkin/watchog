@@ -21,8 +21,9 @@
   <PropertyGroup Label="Globals">
     <ProjectGuid>{5652A337-BA9C-4F45-AA4A-E4DAD202B5D3}</ProjectGuid>
     <Keyword>Win32Proj</Keyword>
-    <RootNamespace>TrackoVLCPlugin</RootNamespace>
+    <RootNamespace>WatchogVLCPlugin</RootNamespace>
     <WindowsTargetPlatformVersion>8.1</WindowsTargetPlatformVersion>
+    <ProjectName>Watchog.VLCPlugin</ProjectName>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
@@ -71,22 +72,22 @@
   <PropertyGroup Label="UserMacros" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <LinkIncremental>true</LinkIncremental>
-    <TargetName>libtracko_plugin</TargetName>
+    <TargetName>libwatchog_plugin</TargetName>
     <OutDir>C:\Program Files\VideoLAN\VLC\plugins\misc\</OutDir>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
     <LinkIncremental>true</LinkIncremental>
-    <TargetName>libtracko_plugin</TargetName>
+    <TargetName>libwatchog_plugin</TargetName>
     <OutDir>C:\Program Files\VideoLAN\VLC\plugins\misc\</OutDir>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
     <LinkIncremental>false</LinkIncremental>
-    <TargetName>libtracko_plugin</TargetName>
+    <TargetName>libwatchog_plugin</TargetName>
     <OutDir>C:\Program Files\VideoLAN\VLC\plugins\misc\</OutDir>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
     <LinkIncremental>false</LinkIncremental>
-    <TargetName>libtracko_plugin</TargetName>
+    <TargetName>libwatchog_plugin</TargetName>
     <OutDir>C:\Program Files\VideoLAN\VLC\plugins\misc\</OutDir>
   </PropertyGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
@@ -172,7 +173,7 @@
     <ClInclude Include="vlc_interface.h" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\Tracko.IPC\Tracko.IPC.vcxproj">
+    <ProjectReference Include="..\Watchog.IPC\Watchog.IPC.vcxproj">
       <Project>{d9d056ca-3a92-4f69-8a9f-061cf1098a88}</Project>
     </ProjectReference>
   </ItemGroup>

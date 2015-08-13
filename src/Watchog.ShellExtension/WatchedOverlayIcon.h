@@ -4,12 +4,12 @@
 #include <vector>
 
 #include "resource.h"
-#include "TrackoShellExtension_i.h"
+#include "WatchogShellExtension_i.h"
 
 #include <shlobj.h>
 #include <comdef.h>
 
-#include "../Tracko.IPC/IPCPeer.h"
+#include "../Watchog.IPC/IPCPeer.h"
 
 using namespace ATL;
 

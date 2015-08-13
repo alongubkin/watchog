@@ -4,7 +4,7 @@
     <ClInclude Include="resource.h">
       <Filter>Properties</Filter>
     </ClInclude>
-    <ClInclude Include="Tracko.IPC.CLRBridge.h">
+    <ClInclude Include="Watchog.IPC.CLRBridge.h">
       <Filter>CLRBridge</Filter>
     </ClInclude>
   </ItemGroup>
@@ -12,7 +12,7 @@
     <ClCompile Include="AssemblyInfo.cpp">
       <Filter>Properties</Filter>
     </ClCompile>
-    <ClCompile Include="Tracko.IPC.CLRBridge.cpp">
+    <ClCompile Include="Watchog.IPC.CLRBridge.cpp">
       <Filter>CLRBridge</Filter>
     </ClCompile>
   </ItemGroup>

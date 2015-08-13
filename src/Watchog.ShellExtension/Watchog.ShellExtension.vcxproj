@@ -22,6 +22,7 @@
     <ProjectGuid>{B94C5F0A-9D78-440B-80AF-7742B4EFD217}</ProjectGuid>
     <WindowsTargetPlatformVersion>8.1</WindowsTargetPlatformVersion>
     <Keyword>AtlProj</Keyword>
+    <ProjectName>Watchog.ShellExtension</ProjectName>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
@@ -94,11 +95,11 @@
       <MkTypLibCompatible>false</MkTypLibCompatible>
       <TargetEnvironment>Win32</TargetEnvironment>
       <PreprocessorDefinitions>_DEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
-      <HeaderFileName>TrackoShellExtension_i.h</HeaderFileName>
-      <InterfaceIdentifierFileName>TrackoShellExtension_i.c</InterfaceIdentifierFileName>
-      <ProxyFileName>TrackoShellExtension_p.c</ProxyFileName>
+      <HeaderFileName>WatchogShellExtension_i.h</HeaderFileName>
+      <InterfaceIdentifierFileName>WatchogShellExtension_i.c</InterfaceIdentifierFileName>
+      <ProxyFileName>WatchogShellExtension_p.c</ProxyFileName>
       <GenerateStublessProxies>true</GenerateStublessProxies>
-      <TypeLibraryName>$(IntDir)TrackoShellExtension.tlb</TypeLibraryName>
+      <TypeLibraryName>$(IntDir)WatchogShellExtension.tlb</TypeLibraryName>
       <DllDataFileName />
       <ValidateAllParameters>true</ValidateAllParameters>
     </Midl>
@@ -109,7 +110,7 @@
     </ResourceCompile>
     <Link>
       <SubSystem>Windows</SubSystem>
-      <ModuleDefinitionFile>.\Tracko.ShellExtension.def</ModuleDefinitionFile>
+      <ModuleDefinitionFile>.\Watchog.ShellExtension.def</ModuleDefinitionFile>
       <GenerateDebugInformation>true</GenerateDebugInformation>
       <RegisterOutput>true</RegisterOutput>
       <PerUserRedirection>false</PerUserRedirection>
@@ -126,11 +127,11 @@
     <Midl>
       <MkTypLibCompatible>false</MkTypLibCompatible>
       <PreprocessorDefinitions>_DEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
-      <HeaderFileName>TrackoShellExtension_i.h</HeaderFileName>
-      <InterfaceIdentifierFileName>TrackoShellExtension_i.c</InterfaceIdentifierFileName>
-      <ProxyFileName>TrackoShellExtension_p.c</ProxyFileName>
+      <HeaderFileName>WatchogShellExtension_i.h</HeaderFileName>
+      <InterfaceIdentifierFileName>WatchogShellExtension_i.c</InterfaceIdentifierFileName>
+      <ProxyFileName>WatchogShellExtension_p.c</ProxyFileName>
       <GenerateStublessProxies>true</GenerateStublessProxies>
-      <TypeLibraryName>$(IntDir)TrackoShellExtension.tlb</TypeLibraryName>
+      <TypeLibraryName>$(IntDir)WatchogShellExtension.tlb</TypeLibraryName>
       <DllDataFileName />
       <ValidateAllParameters>true</ValidateAllParameters>
     </Midl>
@@ -159,11 +160,11 @@
       <MkTypLibCompatible>false</MkTypLibCompatible>
       <TargetEnvironment>Win32</TargetEnvironment>
       <PreprocessorDefinitions>NDEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
-      <HeaderFileName>TrackoShellExtension_i.h</HeaderFileName>
-      <InterfaceIdentifierFileName>TrackoShellExtension_i.c</InterfaceIdentifierFileName>
-      <ProxyFileName>TrackoShellExtension_p.c</ProxyFileName>
+      <HeaderFileName>WatchogShellExtension_i.h</HeaderFileName>
+      <InterfaceIdentifierFileName>WatchogShellExtension_i.c</InterfaceIdentifierFileName>
+      <ProxyFileName>WatchogShellExtension_p.c</ProxyFileName>
       <GenerateStublessProxies>true</GenerateStublessProxies>
-      <TypeLibraryName>$(IntDir)TrackoShellExtension.tlb</TypeLibraryName>
+      <TypeLibraryName>$(IntDir)WatchogShellExtension.tlb</TypeLibraryName>
       <DllDataFileName />
       <ValidateAllParameters>true</ValidateAllParameters>
     </Midl>
@@ -174,7 +175,7 @@
     </ResourceCompile>
     <Link>
       <SubSystem>Windows</SubSystem>
-      <ModuleDefinitionFile>.\Tracko.ShellExtension.def</ModuleDefinitionFile>
+      <ModuleDefinitionFile>.\Watchog.ShellExtension.def</ModuleDefinitionFile>
       <GenerateDebugInformation>true</GenerateDebugInformation>
       <EnableCOMDATFolding>true</EnableCOMDATFolding>
       <OptimizeReferences>true</OptimizeReferences>
@@ -193,11 +194,11 @@
     <Midl>
       <MkTypLibCompatible>false</MkTypLibCompatible>
       <PreprocessorDefinitions>NDEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
-      <HeaderFileName>TrackoShellExtension_i.h</HeaderFileName>
-      <InterfaceIdentifierFileName>TrackoShellExtension_i.c</InterfaceIdentifierFileName>
-      <ProxyFileName>TrackoShellExtension_p.c</ProxyFileName>
+      <HeaderFileName>WatchogShellExtension_i.h</HeaderFileName>
+      <InterfaceIdentifierFileName>WatchogShellExtension_i.c</InterfaceIdentifierFileName>
+      <ProxyFileName>WatchogShellExtension_p.c</ProxyFileName>
       <GenerateStublessProxies>true</GenerateStublessProxies>
-      <TypeLibraryName>$(IntDir)TrackoShellExtension.tlb</TypeLibraryName>
+      <TypeLibraryName>$(IntDir)WatchogShellExtension.tlb</TypeLibraryName>
       <DllDataFileName />
       <ValidateAllParameters>true</ValidateAllParameters>
     </Midl>
@@ -208,7 +209,7 @@
     </ResourceCompile>
     <Link>
       <SubSystem>Windows</SubSystem>
-      <ModuleDefinitionFile>.\Tracko.ShellExtension.def</ModuleDefinitionFile>
+      <ModuleDefinitionFile>.\Watchog.ShellExtension.def</ModuleDefinitionFile>
       <GenerateDebugInformation>true</GenerateDebugInformation>
       <EnableCOMDATFolding>true</EnableCOMDATFolding>
       <OptimizeReferences>true</OptimizeReferences>
@@ -238,7 +239,7 @@
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|x64'">Create</PrecompiledHeader>
     </ClCompile>
     <ClCompile Include="dllimpl.cpp" />
-    <ClCompile Include="TrackoShellExtension_i.c">
+    <ClCompile Include="WatchogShellExtension_i.c">
       <CompileAsManaged Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">false</CompileAsManaged>
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
       </PrecompiledHeader>
@@ -259,19 +260,19 @@
     <ClInclude Include="Resource.h" />
     <ClInclude Include="stdafx.h" />
     <ClInclude Include="targetver.h" />
-    <ClInclude Include="TrackoShellExtension_i.h" />
+    <ClInclude Include="WatchogShellExtension_i.h" />
     <ClInclude Include="WatchedOverlayIcon.h" />
   </ItemGroup>
   <ItemGroup>
-    <ResourceCompile Include="Tracko.ShellExtension.rc" />
+    <ResourceCompile Include="Watchog.ShellExtension.rc" />
   </ItemGroup>
   <ItemGroup>
     <None Include="ShellExtension.def" />
-    <None Include="Tracko.ShellExtension.rgs" />
+    <None Include="Watchog.ShellExtension.rgs" />
     <None Include="WatchedOverlayIcon.rgs" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\Tracko.IPC\Tracko.IPC.vcxproj">
+    <ProjectReference Include="..\Watchog.IPC\Watchog.IPC.vcxproj">
       <Project>{d9d056ca-3a92-4f69-8a9f-061cf1098a88}</Project>
     </ProjectReference>
   </ItemGroup>

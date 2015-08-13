@@ -3,7 +3,7 @@
 #pragma warning(push, 0)   
 
 #define __PLUGIN__
-#define MODULE_STRING "tracko"
+#define MODULE_STRING "watchog"
 
 #define LIBVLC_USE_PTHREAD_CANCEL 1
 typedef __int64 ssize_t;

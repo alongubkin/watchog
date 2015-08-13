@@ -1,6 +1,6 @@
 #include "stdafx.h"
 #include "resource.h"
-#include "TrackoShellExtension_i.h"
+#include "WatchogShellExtension_i.h"
 #include "dllmain.h"
 
 using namespace ATL;

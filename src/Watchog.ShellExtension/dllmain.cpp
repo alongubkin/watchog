@@ -2,10 +2,10 @@
 
 #include "stdafx.h"
 #include "resource.h"
-#include "TrackoShellExtension_i.h"
+#include "WatchogShellExtension_i.h"
 #include "dllmain.h"
 
-CTrackoShellExtensionModule _AtlModule;
+CWatchogShellExtensionModule _AtlModule;
 
 // DLL Entry Point
 extern "C" BOOL WINAPI DllMain(HINSTANCE hInstance, DWORD dwReason, LPVOID lpReserved)

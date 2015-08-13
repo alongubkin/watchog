@@ -6,7 +6,7 @@
  /* File created by MIDL compiler version 8.00.0603 */
 /* at Fri Aug 07 22:23:06 2015
  */
-/* Compiler settings for TrackoShellExtension.idl:
+/* Compiler settings for WatchogShellExtension.idl:
     Oicf, W1, Zp8, env=Win64 (32b run), target_arch=AMD64 8.00.0603 
     protocol : dce , ms_ext, c_ext, robust
     error checks: allocation ref bounds_check enum stub_data 
@@ -36,8 +36,8 @@
 #include "ole2.h"
 #endif /*COM_NO_WINDOWS_H*/
 
-#ifndef __TrackoShellExtension_i_h__
-#define __TrackoShellExtension_i_h__
+#ifndef __WatchogShellExtension_i_h__
+#define __WatchogShellExtension_i_h__
 
 #if defined(_MSC_VER) && (_MSC_VER >= 1020)
 #pragma once
@@ -194,14 +194,14 @@ EXTERN_C const IID IID_IWatchedOverlayIcon;
 
 
 
-#ifndef __TrackoShellExtensionLib_LIBRARY_DEFINED__
-#define __TrackoShellExtensionLib_LIBRARY_DEFINED__
+#ifndef __WatchogShellExtensionLib_LIBRARY_DEFINED__
+#define __WatchogShellExtensionLib_LIBRARY_DEFINED__
 
-/* library TrackoShellExtensionLib */
+/* library WatchogShellExtensionLib */
 /* [version][uuid] */ 
 
 
-EXTERN_C const IID LIBID_TrackoShellExtensionLib;
+EXTERN_C const IID LIBID_WatchogShellExtensionLib;
 
 EXTERN_C const CLSID CLSID_WatchedOverlayIcon;
 
@@ -210,7 +210,7 @@ EXTERN_C const CLSID CLSID_WatchedOverlayIcon;
 class DECLSPEC_UUID("D729C131-4A94-4A95-B3EE-361E37BA30BE")
 WatchedOverlayIcon;
 #endif
-#endif /* __TrackoShellExtensionLib_LIBRARY_DEFINED__ */
+#endif /* __WatchogShellExtensionLib_LIBRARY_DEFINED__ */
 
 /* Additional Prototypes for ALL interfaces */
 

@@ -1,10 +1,10 @@
-// Tracko.IPC.CLRBridge.h
+// Watchog.IPC.CLRBridge.h
 
 #pragma once
 
-#include "../Tracko.IPC/IPCPeer.h"
+#include "../Watchog.IPC/IPCPeer.h"
 
-namespace Tracko
+namespace Watchog
 {
     namespace IPC
     {

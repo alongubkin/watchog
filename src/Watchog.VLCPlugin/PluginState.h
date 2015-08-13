@@ -3,7 +3,7 @@
 #include <string>
 #include <cstdint>
 
-#include "../Tracko.IPC/IPCPeer.h"
+#include "../Watchog.IPC/IPCPeer.h"
 
 class PluginState
 {

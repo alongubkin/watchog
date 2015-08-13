@@ -1,4 +1,4 @@
-; Tracko.ShellExtension.def : Declares the module parameters.
+; Watchog.ShellExtension.def : Declares the module parameters.
 
 LIBRARY
 
