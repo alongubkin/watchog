@@ -1,5 +1,6 @@
 <img src="https://raw.githubusercontent.com/alongubkin/watchog/master/logo.png" alt="Watchog" />
 ---
 
-Tracks all your watched TV show episodes automatically for Windows 10.
+**Mission**
+>Never forget again what was the last episode you've watched. 
 
