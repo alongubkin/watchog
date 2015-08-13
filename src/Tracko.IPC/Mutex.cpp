@@ -11,7 +11,7 @@ HANDLE Mutex::create_mutex(const std::wstring& name)
     static const bool NOT_INITIAL_OWNER = false;
 
     HANDLE handle = CreateMutexW(DEFAULT_SECURITY, NOT_INITIAL_OWNER, name.c_str());
-    if (NULL == handle)
+    if (nullptr == handle)
     {
         throw WindowsException(GetLastError());
     }

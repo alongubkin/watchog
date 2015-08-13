@@ -21,7 +21,7 @@ CWatchedOverlayIcon::Initialize(
             return E_INVALIDARG;
         }
 
-        FORMATETC tFormat = { CF_HDROP, NULL, DVASPECT_CONTENT, -1, TYMED_HGLOBAL };
+        FORMATETC tFormat = { CF_HDROP, nullptr, DVASPECT_CONTENT, -1, TYMED_HGLOBAL };
         STGMEDIUM tStg = { TYMED_HGLOBAL };
 
         // Look for CF_HDROP data in the data object. If there
@@ -41,7 +41,7 @@ CWatchedOverlayIcon::Initialize(
         }
 
         // Find count of selected files
-        UINT nFiles = DragQueryFileW(phDrop.get(), 0xFFFFFFFF, NULL, 0);
+        UINT nFiles = DragQueryFileW(phDrop.get(), 0xFFFFFFFF, nullptr, 0);
         if (0 == nFiles)
         {
             return E_INVALIDARG;
