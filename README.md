@@ -1,6 +1,4 @@
 <img src="https://raw.githubusercontent.com/alongubkin/watchog/master/logo.png" alt="Watchog" />
 ---
 
-**Mission**
->Never forget again what was the last episode you've watched. 
-
+Never again forget what was the last episode you've watched. Watchog simply tells you.
