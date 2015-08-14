@@ -4,7 +4,11 @@
 #include "SharedMemoryStructs.h"
 
 namespace ipc
-{
+{    
+    /// <summary>
+    /// Provides utilities for dealing with the global movies shared buffer.
+    /// </summary>
+    // TODO: Replace this with SharedMovieIterator.
     class SharedMovieListUtils final
     {
     public:

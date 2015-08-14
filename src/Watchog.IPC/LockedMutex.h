@@ -4,7 +4,11 @@
 #include "Mutex.h"
 
 namespace ipc
-{
+{    
+    /// <summary>
+    /// Locks a <see cref="Mutex"/>. The mutex is unlocked when this object is
+    /// destructed.
+    /// </summary>
     class LockedMutex final
     {
     public:

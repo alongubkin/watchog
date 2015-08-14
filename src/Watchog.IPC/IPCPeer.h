@@ -9,7 +9,11 @@
 #include "MovieList.h"
 
 namespace ipc
-{
+{    
+    /// <summary>
+    /// Maps the global movies shared buffer to the current process and provides
+    /// methods for observing and manipulating it.
+    /// </summary>
     class IPCPeer final
     {
     public:

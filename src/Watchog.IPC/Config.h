@@ -6,6 +6,9 @@
 
 namespace ipc
 {
+    /// <summary>
+    /// Hard-coded configuration for the IPC.
+    /// </summary>
     class Config final
     {
     public:

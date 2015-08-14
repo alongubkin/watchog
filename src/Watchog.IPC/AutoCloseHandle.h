@@ -3,7 +3,11 @@
 #include <Windows.h>
 
 namespace ipc
-{
+{        
+    /// <summary>
+    /// Abstract class for managing most Windows objects. The handle is closed
+    /// when the object is destructed.
+    /// </summary>
     class AutoCloseHandle
     {
     public:

@@ -7,7 +7,11 @@
 #include "AutoCloseHandle.h"
 
 namespace ipc
-{
+{    
+    /// <summary>
+    /// Mutex synchronization object that can be shared between processes.
+    /// To lock the mutex, use <see cref="LockedMutex"/>.
+    /// </summary>
     class Mutex final : public AutoCloseHandle
     {
     public:

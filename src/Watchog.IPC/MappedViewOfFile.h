@@ -8,7 +8,11 @@
 #include "FileMapping.h"
 
 namespace ipc
-{
+{    
+    /// <summary>
+    /// Maps the content of a <see cref="FileMapping"/> object the current process
+    /// virtual address space. 
+    /// </summary>
     class MappedViewOfFile final
     {
     public:

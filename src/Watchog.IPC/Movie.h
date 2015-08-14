@@ -7,7 +7,7 @@
 #include "SharedMemoryStructs.h"
 
 namespace ipc
-{
+{    
     class Movie
     {
     public:

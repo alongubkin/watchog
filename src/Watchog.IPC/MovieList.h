@@ -6,7 +6,7 @@
 #include "Movie.h"
 
 namespace ipc
-{
+{    
     class MovieList
     {
     public:
