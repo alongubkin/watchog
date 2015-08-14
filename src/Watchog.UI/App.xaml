@@ -1,13 +1,11 @@
-﻿<Application x:Class="Watchog.App"
+﻿<Application x:Class="Watchog.UI.App"
              xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-             xmlns:local="clr-namespace:Watchog"
-             StartupUri="MainWindow.xaml">
+             xmlns:local="clr-namespace:Watchog.UI">
     <Application.Resources>
         <Style x:Key="OpenSans-Regular">
             <Setter Property="TextElement.FontFamily" 
                 Value="pack://application:,,,/Fonts/#Open Sans" />
-            
         </Style>
 
         <Style x:Key="OpenSans-Bold">
@@ -19,6 +17,5 @@
             <Setter Property="TextElement.FontFamily" 
                 Value="pack://application:,,,/Fonts/#Open Sans Semibold" />
         </Style>
-
     </Application.Resources>
 </Application>

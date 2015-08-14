@@ -13,7 +13,7 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 
-namespace Watchog
+namespace Watchog.UI
 {
     /// <summary>
     /// Interaction logic for MainWindow.xaml
@@ -32,8 +32,9 @@ namespace Watchog
 
         private void CloseButton_Click(object sender, RoutedEventArgs e)
         {
-            Close();
+            Hide();
         }
+
         private void MinimizeButton_Click(object sender, RoutedEventArgs e)
         {
             WindowState = WindowState.Minimized;
