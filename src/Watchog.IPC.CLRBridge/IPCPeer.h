@@ -12,7 +12,7 @@ namespace Watchog
         public ref class IPCPeer sealed
         {
         public:
-            IPCPeer() { _peer = new ::IPCPeer(); }
+            IPCPeer() { _peer = new ipc::IPCPeer(); }
             ~IPCPeer() { this->!IPCPeer(); }
             !IPCPeer() { delete _peer; }
 
@@ -23,7 +23,7 @@ namespace Watchog
                     
                 try
                 {
-                    _peer->set_movie_state(native_path, static_cast<::MovieState>(state));
+                    _peer->set_movie_state(native_path, static_cast<ipc::MovieState>(state));
                 }
                 finally
                 {
@@ -57,7 +57,7 @@ namespace Watchog
             }
 
         private:
-            ::IPCPeer* _peer;
+            ipc::IPCPeer* _peer;
         };
     }
 }

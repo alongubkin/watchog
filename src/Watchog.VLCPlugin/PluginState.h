@@ -19,9 +19,9 @@ public:
     void mark_as_watched();
 
 private:
-    IPCPeer _peer;
+    ipc::IPCPeer _peer;
     std::wstring _current_file_path;
     uint64_t _current_length;
-    MovieState _current_movie_state;
+    ipc::MovieState _current_movie_state;
 };
 

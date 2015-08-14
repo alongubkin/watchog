@@ -19,7 +19,7 @@ namespace Watchog
             property System::Collections::Generic::List<Movie^>^ Movies;
 
         internal:
-            MovieList(const ::MovieList& list)
+            MovieList(const ipc::MovieList& list)
             {
                 Version = list.get_version();
                 Movies = gcnew System::Collections::Generic::List<Movie^>();
@@ -30,9 +30,9 @@ namespace Watchog
                 }
             }
 
-            ::MovieListPtr ToNative()
+            ipc::MovieListPtr ToNative()
             {
-                ::MovieListPtr movies = std::make_shared<::MovieList>();
+                ipc::MovieListPtr movies = std::make_shared<ipc::MovieList>();
                 movies->set_version(Version);
 
                 for each(auto movie in Movies)

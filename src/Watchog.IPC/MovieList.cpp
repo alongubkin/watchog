@@ -1,5 +1,8 @@
 #include "MovieList.h"
 
-MovieList::MovieList() :
-    _movies(std::make_shared<MovieVector>())
-{}
+namespace ipc
+{
+    MovieList::MovieList() :
+        _movies(std::make_shared<MovieVector>())
+    {}
+}

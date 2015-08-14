@@ -160,7 +160,7 @@ CWatchedOverlayIcon::IsMemberOf(
             return S_FALSE;
         }
 
-        if (MovieState::Watched == _tIPC.get_movie_state(path))
+        if (ipc::MovieState::Watched == _tIPC.get_movie_state(path))
         {
             return S_OK;
         }
@@ -199,35 +199,35 @@ CWatchedOverlayIcon::QueryContextMenu(
         }
 
         // Make sure that all selected items are in the same state
-        MovieState eState = MovieState::Unknown;
+        ipc::MovieState eState = ipc::MovieState::Unknown;
         for (const auto& tPath : _tSelectedFiles)
         {
-            if (MovieState::Watched == _tIPC.get_movie_state(tPath))
+            if (ipc::MovieState::Watched == _tIPC.get_movie_state(tPath))
             {
                 // The current file is watched. If the previous file wasn't watched,
                 // and this isn't the first file, then don't add a context menu item.
-                if ((MovieState::Watched != eState) &&
-                    (MovieState::Unknown != eState))
+                if ((ipc::MovieState::Watched != eState) &&
+                    (ipc::MovieState::Unknown != eState))
                 {
                     return MAKE_HRESULT(SEVERITY_SUCCESS, FACILITY_NULL, 0);
                 }
 
-                eState = MovieState::Watched;
+                eState = ipc::MovieState::Watched;
             }
             else
             {
                 // The current file isn't watched. If the previous file was watched,
                 // then don't add a context menu item.
-                if (MovieState::Watched == eState)
+                if (ipc::MovieState::Watched == eState)
                 {
                     return MAKE_HRESULT(SEVERITY_SUCCESS, FACILITY_NULL, 0);
                 }
 
-                eState = MovieState::NotWatched;
+                eState = ipc::MovieState::NotWatched;
             }
         }
 
-        if (MovieState::Watched == eState)
+        if (ipc::MovieState::Watched == eState)
         {
             InsertMenuW(hMenu, uMenuIndex, MF_BYPOSITION, uidFirstCmd, L"Mark as Unwatched");
         }
@@ -323,13 +323,13 @@ CWatchedOverlayIcon::InvokeCommand(
             // Otherwise, mark it as watched.
             for (const auto& tPath : _tSelectedFiles)
             {
-                if (MovieState::Watched == _tIPC.get_movie_state(tPath))
+                if (ipc::MovieState::Watched == _tIPC.get_movie_state(tPath))
                 {
-                    _tIPC.set_movie_state(tPath, MovieState::NotWatched);
+                    _tIPC.set_movie_state(tPath, ipc::MovieState::NotWatched);
                 }
                 else
                 {
-                    _tIPC.set_movie_state(tPath, MovieState::Watched);
+                    _tIPC.set_movie_state(tPath, ipc::MovieState::Watched);
                 }
                 
                 // Refresh file

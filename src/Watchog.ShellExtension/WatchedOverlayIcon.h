@@ -100,7 +100,7 @@ public:
     void FinalRelease() {}
 
 private:
-    IPCPeer _tIPC;
+    ipc::IPCPeer _tIPC;
     std::vector<std::wstring> _tSelectedFiles;
 };
 

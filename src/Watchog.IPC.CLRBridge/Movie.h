@@ -17,20 +17,20 @@ namespace Watchog
             property MovieState State;
 
         internal:
-            Movie(const ::Movie& movie)
+            Movie(const ipc::Movie& movie)
             {
                 Path = gcnew System::String(movie.get_path().c_str());
                 State = (MovieState) movie.get_state();
             }
 
-            ::Movie ToNative()
+            ipc::Movie ToNative()
             {
                 const wchar_t* native_path = (const wchar_t*)
                     System::Runtime::InteropServices::Marshal::StringToHGlobalUni(Path).ToPointer();
 
                 try
                 {
-                    return ::Movie(native_path, static_cast<::MovieState>(State));
+                    return ipc::Movie(native_path, static_cast<ipc::MovieState>(State));
                 }
                 finally
                 {

@@ -1,20 +1,23 @@
 #include "AutoCloseHandle.h"
 
-AutoCloseHandle::AutoCloseHandle(HANDLE handle) :
-    _handle(handle)
-{}
-
-AutoCloseHandle::~AutoCloseHandle()
+namespace ipc
 {
-    try
+    AutoCloseHandle::AutoCloseHandle(HANDLE handle) :
+        _handle(handle)
+    {}
+
+    AutoCloseHandle::~AutoCloseHandle()
     {
-        if (!CloseHandle(_handle))
+        try
+        {
+            if (!CloseHandle(_handle))
+            {
+                // TODO: Log
+            }
+        }
+        catch (...)
         {
             // TODO: Log
         }
-    }
-    catch (...)
-    {
-        // TODO: Log
     }
 }

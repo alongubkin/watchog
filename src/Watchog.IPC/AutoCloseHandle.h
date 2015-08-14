@@ -2,17 +2,19 @@
 
 #include <Windows.h>
 
-class AutoCloseHandle
+namespace ipc
 {
-public:
-    AutoCloseHandle(HANDLE handle);
-    virtual ~AutoCloseHandle();
-    AutoCloseHandle(const AutoCloseHandle&) = delete;
-    AutoCloseHandle& operator=(const AutoCloseHandle&) = delete;
+    class AutoCloseHandle
+    {
+    public:
+        AutoCloseHandle(HANDLE handle);
+        virtual ~AutoCloseHandle();
+        AutoCloseHandle(const AutoCloseHandle&) = delete;
+        AutoCloseHandle& operator=(const AutoCloseHandle&) = delete;
 
-    const HANDLE native_handle() const { return _handle; }
+        const HANDLE native_handle() const { return _handle; }
 
-private:
-    HANDLE _handle;
-};
-
+    private:
+        HANDLE _handle;
+    };
+}

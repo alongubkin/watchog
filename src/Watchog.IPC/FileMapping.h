@@ -7,21 +7,24 @@
 #include <Windows.h>
 #include "AutoCloseHandle.h"
 
-class FileMapping final : public AutoCloseHandle
+namespace ipc
 {
-public:
-    FileMapping(const std::wstring& name, uint64_t size);
-    virtual ~FileMapping() = default;
-    FileMapping(const FileMapping&) = delete;
-    FileMapping& operator=(const FileMapping&) = delete;
+    class FileMapping final : public AutoCloseHandle
+    {
+    public:
+        FileMapping(const std::wstring& name, uint64_t size);
+        virtual ~FileMapping() = default;
+        FileMapping(const FileMapping&) = delete;
+        FileMapping& operator=(const FileMapping&) = delete;
 
-    uint64_t get_size() { return _size; }
+        uint64_t get_size() { return _size; }
 
-private:
-    static HANDLE create_file_mapping(const std::wstring& name, uint64_t size);
+    private:
+        static HANDLE create_file_mapping(const std::wstring& name, uint64_t size);
 
-private:
-    uint64_t _size;
-};
+    private:
+        uint64_t _size;
+    };
 
-using FileMappingPtr = std::shared_ptr<FileMapping>;
+    using FileMappingPtr = std::shared_ptr<FileMapping>;
+}
