@@ -98,6 +98,16 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Icons\Close.png" />
+    <Resource Include="Icons\CloseActive.png" />
+    <Resource Include="Icons\Maximize.png" />
+    <Resource Include="Icons\MaximizeActive.png" />
+    <Resource Include="Icons\Minimize.png" />
+    <Resource Include="Icons\MinimizeActive.png" />
+    <Resource Include="Icons\RestoreDown.png" />
+    <Resource Include="Icons\RestoreDownActive.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

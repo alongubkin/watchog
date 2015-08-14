@@ -8,8 +8,8 @@
         WindowStyle="None"
         AllowsTransparency="True"
         Background="Transparent"
-        ResizeMode="CanResize"
-        Title="Watchog" Height="350" Width="525"
+        ResizeMode="NoResize"
+        Title="Watchog" Height="480" Width="640"
         Style="{StaticResource OpenSans-Regular}">
     <Grid Margin="20" Background="#16171a">
         <Grid.Effect>
@@ -18,14 +18,55 @@
         <Grid x:Name="TitleBar" 
               HorizontalAlignment="Stretch"
               VerticalAlignment="Top"
-              Margin="0,0,0,0" 
+              Margin="0" 
               MouseLeftButtonDown="TitleBar_MouseLeftButtonDown"
               Background="Transparent">
             <TextBlock Text="Watchog" 
-                   HorizontalAlignment="Center" 
-                   FontSize="15" 
-                   Margin="10"
-                   Foreground="White" />
+                       HorizontalAlignment="Center" 
+                       FontSize="15" 
+                       Margin="10"
+                       Foreground="White" />
+            <StackPanel Orientation="Horizontal"
+                        HorizontalAlignment="Right" 
+                        VerticalAlignment="Top" 
+                        Margin="10">
+                <Button x:Name="MinimizeButton" Width="20" Height="16" Click="MinimizeButton_Click" Margin="0,0,5,0">
+                    <Button.Template>
+                        <ControlTemplate>
+                            <Image>
+                                <Image.Style>
+                                    <Style TargetType="{x:Type Image}">
+                                        <Setter Property="Source" Value="./Icons/Minimize.png" />
+                                        <Style.Triggers>
+                                            <Trigger Property="IsMouseOver" Value="True">
+                                                <Setter Property="Source" Value="./Icons/MinimizeActive.png" />
+                                            </Trigger>
+                                        </Style.Triggers>
+                                    </Style>
+                                </Image.Style>
+                            </Image>
+                        </ControlTemplate>
+                    </Button.Template>
+                </Button>
+                <Button x:Name="CloseButton" Width="20" Height="16" Click="CloseButton_Click">
+                    <Button.Template>
+                        <ControlTemplate>
+                            <Image>
+                                <Image.Style>
+                                    <Style TargetType="{x:Type Image}">
+                                        <Setter Property="Source" Value="./Icons/Close.png" />
+                                        <Style.Triggers>
+                                            <Trigger Property="IsMouseOver" Value="True">
+                                                <Setter Property="Source" Value="./Icons/CloseActive.png" />
+                                            </Trigger>
+                                        </Style.Triggers>
+                                    </Style>
+                                </Image.Style>
+                            </Image>
+                        </ControlTemplate>
+                    </Button.Template>
+                </Button>                
+            </StackPanel> 
         </Grid>
     </Grid>
 </Window>

@@ -19,5 +19,6 @@
             <Setter Property="TextElement.FontFamily" 
                 Value="pack://application:,,,/Fonts/#Open Sans Semibold" />
         </Style>
+
     </Application.Resources>
 </Application>
