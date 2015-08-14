@@ -1,0 +1,31 @@
+﻿<Window x:Class="Watchog.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Watchog"
+        mc:Ignorable="d"
+        WindowStyle="None"
+        AllowsTransparency="True"
+        Background="Transparent"
+        ResizeMode="CanResize"
+        Title="Watchog" Height="350" Width="525"
+        Style="{StaticResource OpenSans-Regular}">
+    <Grid Margin="20" Background="#16171a">
+        <Grid.Effect>
+            <DropShadowEffect BlurRadius="15" Direction="-90" RenderingBias="Quality" ShadowDepth="2"/>
+        </Grid.Effect>
+        <Grid x:Name="TitleBar" 
+              HorizontalAlignment="Stretch"
+              VerticalAlignment="Top"
+              Margin="0,0,0,0" 
+              MouseLeftButtonDown="TitleBar_MouseLeftButtonDown"
+              Background="Transparent">
+            <TextBlock Text="Watchog" 
+                   HorizontalAlignment="Center" 
+                   FontSize="15" 
+                   Margin="10"
+                   Foreground="White" />
+        </Grid>
+    </Grid>
+</Window>
