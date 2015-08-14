@@ -4,7 +4,10 @@
 #include <stdexcept>
 
 namespace ipc
-{
+{    
+    /// <summary>
+    /// Thrown when a Win32 API call fails.
+    /// </summary>
     class WindowsException final : public std::exception
     {
     public:
@@ -22,7 +25,10 @@ namespace ipc
     private:
         const uint32_t _last_error;
     };
-
+    
+    /// <summary>
+    /// Thrown when a timeout reaches.
+    /// </summary>
     class TimeoutException final : public std::exception
     {
     public:
@@ -31,7 +37,10 @@ namespace ipc
         TimeoutException(const TimeoutException&) = default;
         TimeoutException& operator=(const TimeoutException&) = delete;
     };
-
+    
+    /// <summary>
+    /// Thrown on an attempt to add an entry to a full shared memory buffer.
+    /// </summary>
     class InsufficientSharedMemoryException final : public std::exception
     {
     public:
@@ -41,6 +50,9 @@ namespace ipc
         InsufficientSharedMemoryException& operator=(const InsufficientSharedMemoryException&) = delete;
     };
 
+    /// <summary>
+    /// Thrown when a string operation fails.
+    /// </summary>
     class StringException final : public std::exception
     {
     public:
@@ -49,7 +61,10 @@ namespace ipc
         StringException(const StringException&) = default;
         StringException& operator=(const StringException&) = delete;
     };
-
+    
+    /// <summary>
+    /// Thrown on an attempt to lock an abandoned mutex.
+    /// </summary>
     class AbandonedMutexException final : public std::exception
     {
     public:
