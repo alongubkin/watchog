@@ -6,20 +6,7 @@
 #include <algorithm>
 
 #include <Windows.h>
-
-#include "vlc_includes.h"
-#include "PluginState.h"
-
-struct intf_sys_t
-{
-    PluginState state;
-    void* input;
-};
-
-static inline uint64_t from_mtime(mtime_t time)
-{
-    return (time + 500ULL) / 1000ULL;
-}
+#include "VLCPlugin.h"
 
 static 
 int 
@@ -131,7 +118,11 @@ OnPlayingItemChanged(
     return VLC_SUCCESS;
 }
 
-static int OnPluginStart(vlc_object_t* plugin)
+static 
+int 
+OnPluginStart(
+    vlc_object_t* plugin
+)
 {
     // Validate arguments
     if (nullptr == plugin)
@@ -149,7 +140,11 @@ static int OnPluginStart(vlc_object_t* plugin)
     return VLC_SUCCESS;
 }
 
-static void OnPluginEnd(vlc_object_t* plugin)
+static 
+void 
+OnPluginEnd(
+    vlc_object_t* plugin
+)
 {
     // Validate arguments
     if (nullptr == plugin)
@@ -170,12 +165,3 @@ static void OnPluginEnd(vlc_object_t* plugin)
 
     delete plugin_interface->p_sys;
 }
-
-vlc_module_begin()
-    set_shortname("Watchog")
-    set_description("Watchog")
-    set_category(CAT_INTERFACE)
-    set_subcategory(SUBCAT_INTERFACE_CONTROL)
-    set_capability("interface", 0)
-    set_callbacks(OnPluginStart, OnPluginEnd)
-vlc_module_end()

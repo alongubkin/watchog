@@ -4,6 +4,7 @@
     <ClInclude Include="vlc_interface.h" />
     <ClInclude Include="PluginState.h" />
     <ClInclude Include="vlc_includes.h" />
+    <ClInclude Include="VLCPlugin.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="VLCPlugin.cpp" />

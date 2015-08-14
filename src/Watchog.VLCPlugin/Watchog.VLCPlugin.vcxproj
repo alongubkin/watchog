@@ -169,6 +169,7 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="PluginState.h" />
+    <ClInclude Include="VLCPlugin.h" />
     <ClInclude Include="vlc_includes.h" />
     <ClInclude Include="vlc_interface.h" />
   </ItemGroup>
