@@ -4,4 +4,6 @@
 
 Never again forget what was the last episode you've watched. 
 
+<img src="https://raw.githubusercontent.com/alongubkin/watchog/master/screenshot.png" width="640">
+
 Work in progress
