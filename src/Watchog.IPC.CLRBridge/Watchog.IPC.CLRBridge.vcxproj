@@ -137,12 +137,17 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="Movie.h" />
+    <ClInclude Include="MovieList.h" />
+    <ClInclude Include="MovieState.h" />
     <ClInclude Include="resource.h" />
-    <ClInclude Include="Watchog.IPC.CLRBridge.h" />
+    <ClInclude Include="IPCPeer.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="AssemblyInfo.cpp" />
-    <ClCompile Include="Watchog.IPC.CLRBridge.cpp" />
+    <ClCompile Include="IPCPeer.cpp" />
+    <ClCompile Include="Movie.cpp" />
+    <ClCompile Include="MovieList.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Watchog.IPC\Watchog.IPC.vcxproj">

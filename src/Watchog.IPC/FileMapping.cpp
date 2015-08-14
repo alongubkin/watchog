@@ -1,12 +1,12 @@
 #include "Exceptions.h"
 #include "FileMapping.h"
 
-FileMapping::FileMapping(const std::wstring& name, const uint64_t size) :
+FileMapping::FileMapping(const std::wstring& name, uint64_t size) :
     AutoCloseHandle(create_file_mapping(name, size)),
     _size(size)
 {}
 
-HANDLE FileMapping::create_file_mapping(const std::wstring& name, const uint64_t size)
+HANDLE FileMapping::create_file_mapping(const std::wstring& name, uint64_t size)
 {
     static const HANDLE NOT_BACKED_BY_FILE = INVALID_HANDLE_VALUE;
     static const PSECURITY_ATTRIBUTES DEFAULT_SECURITY = nullptr;

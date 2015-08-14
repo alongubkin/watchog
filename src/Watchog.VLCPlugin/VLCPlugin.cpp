@@ -36,7 +36,7 @@ OnPlayingItemUpdated(
 
         // If there are less than 30 seconds to the movie, mark it
         // as watched.
-        if (77 > time_left_in_seconds)
+        if (30 > time_left_in_seconds)
         {
             plugin_interface->p_sys->state.mark_as_watched();
         }

@@ -1,12 +1,12 @@
 #include "Exceptions.h"
 #include "MappedViewOfFile.h"
 
-MappedViewOfFile::MappedViewOfFile(FileMappingPtr file_mapping, const Access access) :
+MappedViewOfFile::MappedViewOfFile(FileMappingPtr file_mapping, Access access) :
     _file_mapping(file_mapping),
     _file_view(map_view_of_file(_file_mapping, access))
 {}
 
-void* MappedViewOfFile::map_view_of_file(FileMappingPtr file_mapping, const Access access)
+void* MappedViewOfFile::map_view_of_file(FileMappingPtr file_mapping, Access access)
 {
     static const unsigned long FILE_BEGIN_OFFSET_HIGH = 0;
     static const unsigned long FILE_BEGIN_OFFSET_LOW = 0;
@@ -38,4 +38,9 @@ MappedViewOfFile::~MappedViewOfFile()
     {
         // TODO: Log
     }
+}
+
+uint64_t MappedViewOfFile::get_size() const
+{
+    return _file_mapping->get_size();
 }

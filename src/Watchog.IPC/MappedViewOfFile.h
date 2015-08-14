@@ -17,7 +17,7 @@ public:
         ReadWrite = FILE_MAP_READ | FILE_MAP_WRITE
     };
 
-    MappedViewOfFile(FileMappingPtr file_mapping, const Access access);
+    MappedViewOfFile(FileMappingPtr file_mapping, Access access);
     virtual ~MappedViewOfFile();
     MappedViewOfFile(const MappedViewOfFile&) = delete;
     MappedViewOfFile& operator=(const MappedViewOfFile&) = delete;
@@ -25,8 +25,10 @@ public:
     template <class T>
     T* get();
     
+    uint64_t get_size() const;
+
 private:
-    static void* map_view_of_file(FileMappingPtr file_mapping, const Access access);
+    static void* map_view_of_file(FileMappingPtr file_mapping, Access access);
 
 private:
     FileMappingPtr _file_mapping;

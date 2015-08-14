@@ -19,14 +19,23 @@
     <ClInclude Include="Exceptions.h">
       <Filter>Common</Filter>
     </ClInclude>
-    <ClInclude Include="Models.h">
-      <Filter>Watchog IPC</Filter>
-    </ClInclude>
     <ClInclude Include="IPCPeer.h">
       <Filter>Watchog IPC</Filter>
     </ClInclude>
     <ClInclude Include="MappedViewOfFile.h">
       <Filter>IPC Internals</Filter>
+    </ClInclude>
+    <ClInclude Include="SharedMemoryStructs.h">
+      <Filter>Watchog IPC</Filter>
+    </ClInclude>
+    <ClInclude Include="Movie.h">
+      <Filter>Models</Filter>
+    </ClInclude>
+    <ClInclude Include="MovieList.h">
+      <Filter>Models</Filter>
+    </ClInclude>
+    <ClInclude Include="SharedMovieListUtils.h">
+      <Filter>Watchog IPC</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
@@ -48,6 +57,15 @@
     <ClCompile Include="MappedViewOfFile.cpp">
       <Filter>IPC Internals</Filter>
     </ClCompile>
+    <ClCompile Include="Movie.cpp">
+      <Filter>Models</Filter>
+    </ClCompile>
+    <ClCompile Include="MovieList.cpp">
+      <Filter>Models</Filter>
+    </ClCompile>
+    <ClCompile Include="SharedMovieListUtils.cpp">
+      <Filter>Watchog IPC</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <Filter Include="IPC Internals">
@@ -64,6 +82,9 @@
     </Filter>
     <Filter Include="Watchog IPC">
       <UniqueIdentifier>{84aa58f2-c1d0-455d-b8b7-bff8acd13350}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Models">
+      <UniqueIdentifier>{b5171529-07b7-44d2-be11-546b693e8569}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
 </Project>

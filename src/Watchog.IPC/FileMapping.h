@@ -10,7 +10,7 @@
 class FileMapping final : public AutoCloseHandle
 {
 public:
-    FileMapping(const std::wstring& name, const uint64_t size);
+    FileMapping(const std::wstring& name, uint64_t size);
     virtual ~FileMapping() = default;
     FileMapping(const FileMapping&) = delete;
     FileMapping& operator=(const FileMapping&) = delete;
@@ -18,7 +18,7 @@ public:
     uint64_t get_size() { return _size; }
 
 private:
-    static HANDLE create_file_mapping(const std::wstring& name, const uint64_t size);
+    static HANDLE create_file_mapping(const std::wstring& name, uint64_t size);
 
 private:
     uint64_t _size;

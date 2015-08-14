@@ -13,15 +13,16 @@ enum class MovieState : uint32_t
 
 #pragma pack(push)
 #pragma pack(1)
-struct MovieModel
+struct SharedMovie
 {
     MovieState state;
     wchar_t path[ANYSIZE_ARRAY];
 };
 
-struct MovieListModel
+struct SharedMovieList
 {
     uint32_t count;
-    MovieModel movies[ANYSIZE_ARRAY];
+    uint32_t version;
+    SharedMovie movies[ANYSIZE_ARRAY];
 };
 #pragma pack(pop)

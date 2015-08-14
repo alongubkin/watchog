@@ -4,8 +4,9 @@
 
 #include "Config.h"
 #include "MappedViewOfFile.h"
-#include "Models.h"
 #include "Mutex.h"
+#include "SharedMemoryStructs.h"
+#include "MovieList.h"
 
 class IPCPeer final
 {
@@ -18,8 +19,11 @@ public:
     const MovieState get_movie_state(const std::wstring& path);
     void set_movie_state(const std::wstring& path, const MovieState state);
 
+    MovieListPtr get_all();
+    void reset(const MovieList& movies);
+
 private:
-    MovieModel* get_movie_by_path(const std::wstring& path);
+    SharedMovie* get_movie_by_path(const std::wstring& path);
     
 private:
     MutexPtr _mutex;

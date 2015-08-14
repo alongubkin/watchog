@@ -1,23 +1,15 @@
-// Watchog.IPC.CLRBridge.h
-
 #pragma once
 
 #include "../Watchog.IPC/IPCPeer.h"
+
+#include "MovieState.h"
+#include "MovieList.h"
 
 namespace Watchog
 {
     namespace IPC
     {
-        // This must match to MovieState in Models.h!
-        public enum class MovieState
-        {
-            Unknown = 0,
-            NotWatched = 1,
-            Watched = 2,
-            InProgress = 3
-        };
-
-        public ref class IPCPeer
+        public ref class IPCPeer sealed
         {
         public:
             IPCPeer() { _peer = new ::IPCPeer(); }
@@ -52,6 +44,16 @@ namespace Watchog
                 {
                     System::Runtime::InteropServices::Marshal::FreeHGlobal(System::IntPtr((void*)native_path));
                 }
+            }
+
+            void Reset(MovieList^ movieList)
+            {
+                _peer->reset(*movieList->ToNative());
+            }
+
+            MovieList^ GetAll()
+            {
+                return gcnew MovieList(*_peer->get_all());
             }
 
         private:

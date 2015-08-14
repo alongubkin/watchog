@@ -4,7 +4,16 @@
     <ClInclude Include="resource.h">
       <Filter>Properties</Filter>
     </ClInclude>
-    <ClInclude Include="Watchog.IPC.CLRBridge.h">
+    <ClInclude Include="IPCPeer.h">
+      <Filter>CLRBridge</Filter>
+    </ClInclude>
+    <ClInclude Include="Movie.h">
+      <Filter>CLRBridge</Filter>
+    </ClInclude>
+    <ClInclude Include="MovieState.h">
+      <Filter>CLRBridge</Filter>
+    </ClInclude>
+    <ClInclude Include="MovieList.h">
       <Filter>CLRBridge</Filter>
     </ClInclude>
   </ItemGroup>
@@ -12,7 +21,13 @@
     <ClCompile Include="AssemblyInfo.cpp">
       <Filter>Properties</Filter>
     </ClCompile>
-    <ClCompile Include="Watchog.IPC.CLRBridge.cpp">
+    <ClCompile Include="IPCPeer.cpp">
+      <Filter>CLRBridge</Filter>
+    </ClCompile>
+    <ClCompile Include="Movie.cpp">
+      <Filter>CLRBridge</Filter>
+    </ClCompile>
+    <ClCompile Include="MovieList.cpp">
       <Filter>CLRBridge</Filter>
     </ClCompile>
   </ItemGroup>
