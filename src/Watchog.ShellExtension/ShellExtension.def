@@ -1,4 +1,4 @@
-; Watchog.ShellExtension.def : Declares the module parameters.
+; ShellExtension.def : Declares the module parameters.
 
 LIBRARY
 

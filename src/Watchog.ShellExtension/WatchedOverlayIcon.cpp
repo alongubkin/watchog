@@ -91,8 +91,8 @@ CWatchedOverlayIcon::GetOverlayInfo(
 
         // Get current module's full path
         if (0 == GetModuleFileNameW(_AtlBaseModule.GetModuleInstance(),
-            pwszIconFile,
-            cchMax))
+                                    pwszIconFile,
+                                    cchMax))
         {
             return E_FAIL;
         }

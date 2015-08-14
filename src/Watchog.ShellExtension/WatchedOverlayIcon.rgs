@@ -22,7 +22,7 @@ HKCR
         }
     }
 
-    NoRemove .mkv
+    NoRemove VLC.mkv
     {
         NoRemove ShellEx
         {
