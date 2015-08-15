@@ -1,2 +1,2 @@
-SQLite.cs linguist-vendored=false
-SQLiteAsync.cs linguist-vendored=false
+src/Watchog.Persistence/SQLite.cs linguist-vendored=false
+src/Watchog.Persistence/SQLiteAsync.cs linguist-vendored=false
