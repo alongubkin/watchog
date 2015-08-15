@@ -2,8 +2,8 @@
 
 #include <memory>
 
-#include "../Watchog.IPC/MovieList.h"
-#include "Movie.h"
+#include "../Watchog.IPC/MovieList.hpp"
+#include "Movie.hpp"
 
 namespace Watchog
 {

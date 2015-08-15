@@ -4,7 +4,7 @@
 #include <memory>
 
 #include <Windows.h>
-#include "AutoCloseHandle.h"
+#include "AutoCloseHandle.hpp"
 
 namespace ipc
 {    

@@ -1,7 +1,7 @@
 #pragma once
 
 #include <chrono>
-#include "Mutex.h"
+#include "Mutex.hpp"
 
 namespace ipc
 {    

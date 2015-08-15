@@ -1,5 +1,5 @@
 #include "stdafx.h"
-#include "WatchedOverlayIcon.h"
+#include "WatchedOverlayIcon.hpp"
 
 using AutoGlobalUnlock = std::unique_ptr<std::remove_pointer<HDROP>::type, decltype(&GlobalUnlock)>;
 using AutoReleaseStg = std::unique_ptr<STGMEDIUM, decltype(&ReleaseStgMedium)>;

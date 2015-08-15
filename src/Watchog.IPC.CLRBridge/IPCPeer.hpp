@@ -1,9 +1,9 @@
 #pragma once
 
-#include "../Watchog.IPC/IPCPeer.h"
+#include "../Watchog.IPC/IPCPeer.hpp"
 
-#include "MovieState.h"
-#include "MovieList.h"
+#include "MovieState.hpp"
+#include "MovieList.hpp"
 
 namespace Watchog
 {

@@ -19,18 +19,18 @@
     </ProjectConfiguration>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="AutoCloseHandle.h" />
-    <ClInclude Include="Config.h" />
-    <ClInclude Include="FileMapping.h" />
-    <ClInclude Include="IPCPeer.h" />
-    <ClInclude Include="Exceptions.h" />
-    <ClInclude Include="LockedMutex.h" />
-    <ClInclude Include="MappedViewOfFile.h" />
-    <ClInclude Include="Movie.h" />
-    <ClInclude Include="MovieList.h" />
-    <ClInclude Include="Mutex.h" />
+    <ClInclude Include="AutoCloseHandle.hpp" />
+    <ClInclude Include="Config.hpp" />
+    <ClInclude Include="FileMapping.hpp" />
+    <ClInclude Include="IPCPeer.hpp" />
+    <ClInclude Include="Exceptions.hpp" />
+    <ClInclude Include="LockedMutex.hpp" />
+    <ClInclude Include="MappedViewOfFile.hpp" />
+    <ClInclude Include="Movie.hpp" />
+    <ClInclude Include="MovieList.hpp" />
+    <ClInclude Include="Mutex.hpp" />
     <ClInclude Include="SharedMemoryStructs.h" />
-    <ClInclude Include="SharedMovieListUtils.h" />
+    <ClInclude Include="SharedMovieListUtils.hpp" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="AutoCloseHandle.cpp" />

@@ -3,7 +3,7 @@
 #include <string>
 #include <cstdint>
 
-#include "../Watchog.IPC/IPCPeer.h"
+#include "../Watchog.IPC/IPCPeer.hpp"
 
 class PluginState
 {

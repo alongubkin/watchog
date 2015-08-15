@@ -1,5 +1,5 @@
 #include <Shlobj.h>
-#include "PluginState.h"
+#include "PluginState.hpp"
 
 PluginState::PluginState()
 {}

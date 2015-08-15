@@ -2,11 +2,12 @@
 
 #include <string>
 
-#include "Config.h"
-#include "MappedViewOfFile.h"
-#include "Mutex.h"
 #include "SharedMemoryStructs.h"
-#include "MovieList.h"
+
+#include "Config.hpp"
+#include "MappedViewOfFile.hpp"
+#include "Mutex.hpp"
+#include "MovieList.hpp"
 
 namespace ipc
 {    

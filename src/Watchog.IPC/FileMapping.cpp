@@ -1,5 +1,5 @@
-#include "Exceptions.h"
-#include "FileMapping.h"
+#include "Exceptions.hpp"
+#include "FileMapping.hpp"
 
 namespace ipc
 {

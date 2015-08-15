@@ -1,7 +1,7 @@
 #pragma once
 
-#include "../Watchog.IPC/Movie.h"
-#include "MovieState.h"
+#include "../Watchog.IPC/Movie.hpp"
+#include "MovieState.hpp"
 
 namespace Watchog
 {

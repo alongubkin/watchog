@@ -49,7 +49,7 @@
     <ClInclude Include="targetver.h">
       <Filter>ATL Stuff</Filter>
     </ClInclude>
-    <ClInclude Include="WatchedOverlayIcon.h">
+    <ClInclude Include="WatchedOverlayIcon.hpp">
       <Filter>WatchedOverlayIcon</Filter>
     </ClInclude>
   </ItemGroup>

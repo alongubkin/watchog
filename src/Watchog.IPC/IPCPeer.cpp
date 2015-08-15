@@ -1,8 +1,8 @@
-#include "Exceptions.h"
-#include "Config.h"
-#include "LockedMutex.h"
-#include "SharedMovieListUtils.h"
-#include "IPCPeer.h"
+#include "Exceptions.hpp"
+#include "Config.hpp"
+#include "LockedMutex.hpp"
+#include "SharedMovieListUtils.hpp"
+#include "IPCPeer.hpp"
 
 namespace ipc
 {

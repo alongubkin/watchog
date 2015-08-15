@@ -261,7 +261,7 @@
     <ClInclude Include="stdafx.h" />
     <ClInclude Include="targetver.h" />
     <ClInclude Include="WatchogShellExtension_i.h" />
-    <ClInclude Include="WatchedOverlayIcon.h" />
+    <ClInclude Include="WatchedOverlayIcon.hpp" />
   </ItemGroup>
   <ItemGroup>
     <ResourceCompile Include="Watchog.ShellExtension.rc" />

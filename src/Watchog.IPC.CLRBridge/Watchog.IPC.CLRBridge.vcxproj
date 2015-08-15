@@ -137,11 +137,11 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="Movie.h" />
-    <ClInclude Include="MovieList.h" />
-    <ClInclude Include="MovieState.h" />
+    <ClInclude Include="Movie.hpp" />
+    <ClInclude Include="MovieList.hpp" />
+    <ClInclude Include="MovieState.hpp" />
     <ClInclude Include="resource.h" />
-    <ClInclude Include="IPCPeer.h" />
+    <ClInclude Include="IPCPeer.hpp" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="AssemblyInfo.cpp" />

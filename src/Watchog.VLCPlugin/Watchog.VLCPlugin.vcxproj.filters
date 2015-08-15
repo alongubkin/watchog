@@ -2,9 +2,9 @@
 <Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <ItemGroup>
     <ClInclude Include="vlc_interface.h" />
-    <ClInclude Include="PluginState.h" />
     <ClInclude Include="vlc_includes.h" />
-    <ClInclude Include="VLCPlugin.h" />
+    <ClInclude Include="PluginState.hpp" />
+    <ClInclude Include="VLCPlugin.hpp" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="VLCPlugin.cpp" />

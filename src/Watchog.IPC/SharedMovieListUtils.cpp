@@ -1,5 +1,5 @@
-#include "Exceptions.h"
-#include "SharedMovieListUtils.h"
+#include "Exceptions.hpp"
+#include "SharedMovieListUtils.hpp"
 
 namespace ipc
 {

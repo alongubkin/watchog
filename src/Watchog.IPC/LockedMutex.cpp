@@ -1,5 +1,5 @@
-#include "Exceptions.h"
-#include "LockedMutex.h"
+#include "Exceptions.hpp"
+#include "LockedMutex.hpp"
 
 namespace ipc
 {

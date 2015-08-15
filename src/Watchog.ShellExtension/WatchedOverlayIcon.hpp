@@ -9,7 +9,7 @@
 #include <shlobj.h>
 #include <comdef.h>
 
-#include "../Watchog.IPC/IPCPeer.h"
+#include "../Watchog.IPC/IPCPeer.hpp"
 
 using namespace ATL;
 

@@ -1,5 +1,5 @@
-#include "Exceptions.h"
-#include "MappedViewOfFile.h"
+#include "Exceptions.hpp"
+#include "MappedViewOfFile.hpp"
 
 namespace ipc
 {

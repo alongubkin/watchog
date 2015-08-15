@@ -5,7 +5,7 @@
 #include <cstdint>
 
 #include <Windows.h>
-#include "FileMapping.h"
+#include "FileMapping.hpp"
 
 namespace ipc
 {    

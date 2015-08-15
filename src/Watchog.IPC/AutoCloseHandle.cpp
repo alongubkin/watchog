@@ -1,4 +1,4 @@
-#include "AutoCloseHandle.h"
+#include "AutoCloseHandle.hpp"
 
 namespace ipc
 {

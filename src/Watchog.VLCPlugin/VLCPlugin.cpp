@@ -6,7 +6,7 @@
 #include <algorithm>
 
 #include <Windows.h>
-#include "VLCPlugin.h"
+#include "VLCPlugin.hpp"
 
 static 
 int 

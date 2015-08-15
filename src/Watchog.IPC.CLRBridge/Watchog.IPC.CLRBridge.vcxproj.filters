@@ -4,16 +4,16 @@
     <ClInclude Include="resource.h">
       <Filter>Properties</Filter>
     </ClInclude>
-    <ClInclude Include="IPCPeer.h">
+    <ClInclude Include="IPCPeer.hpp">
       <Filter>CLRBridge</Filter>
     </ClInclude>
-    <ClInclude Include="Movie.h">
+    <ClInclude Include="Movie.hpp">
       <Filter>CLRBridge</Filter>
     </ClInclude>
-    <ClInclude Include="MovieState.h">
+    <ClInclude Include="MovieList.hpp">
       <Filter>CLRBridge</Filter>
     </ClInclude>
-    <ClInclude Include="MovieList.h">
+    <ClInclude Include="MovieState.hpp">
       <Filter>CLRBridge</Filter>
     </ClInclude>
   </ItemGroup>
