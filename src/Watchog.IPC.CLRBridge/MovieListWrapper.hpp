@@ -3,30 +3,29 @@
 #include <memory>
 
 #include "../Watchog.IPC/MovieList.hpp"
-#include "Movie.hpp"
+#include "MovieWrapper.hpp"
 
 namespace Watchog
 {
     namespace IPC
     {
-        public ref class MovieList sealed
+        public ref class MovieListWrapper sealed
         {
         public:
-            MovieList() {};
-            virtual ~MovieList() {};
+            virtual ~MovieListWrapper() {};
 
             property System::UInt32 Version;
-            property System::Collections::Generic::List<Movie^>^ Movies;
+            property System::Collections::Generic::List<MovieWrapper^>^ Movies;
 
         internal:
-            MovieList(const ipc::MovieList& list)
+            MovieListWrapper(const ipc::MovieList& list)
             {
                 Version = list.get_version();
-                Movies = gcnew System::Collections::Generic::List<Movie^>();
+                Movies = gcnew System::Collections::Generic::List<MovieWrapper^>();
 
                 for (const auto& movie : *list.get_movies())
                 {
-                    Movies->Add(gcnew Movie(movie));
+                    Movies->Add(gcnew MovieWrapper(movie));
                 }
             }
 
@@ -42,6 +41,9 @@ namespace Watchog
 
                 return movies;
             }
+
+        private:
+            MovieListWrapper() {};
         };
     }
 }

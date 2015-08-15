@@ -7,17 +7,16 @@ namespace Watchog
 {
     namespace IPC
     {
-        public ref class Movie sealed
+        public ref class MovieWrapper sealed
         {
         public:
-            Movie() {};
-            virtual ~Movie() {}
+            virtual ~MovieWrapper() {};
 
             property System::String^ Path;
             property MovieState State;
 
         internal:
-            Movie(const ipc::Movie& movie)
+            MovieWrapper(const ipc::Movie& movie)
             {
                 Path = gcnew System::String(movie.get_path().c_str());
                 State = (MovieState) movie.get_state();
@@ -37,6 +36,9 @@ namespace Watchog
                     System::Runtime::InteropServices::Marshal::FreeHGlobal(System::IntPtr((void*)native_path));
                 }
             }
+
+        private:
+            MovieWrapper() {};
         };
     }
 }

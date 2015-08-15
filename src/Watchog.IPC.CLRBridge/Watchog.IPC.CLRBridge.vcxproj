@@ -137,8 +137,8 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="Movie.hpp" />
-    <ClInclude Include="MovieList.hpp" />
+    <ClInclude Include="MovieWrapper.hpp" />
+    <ClInclude Include="MovieListWrapper.hpp" />
     <ClInclude Include="MovieState.hpp" />
     <ClInclude Include="resource.h" />
     <ClInclude Include="IPCPeer.hpp" />
@@ -146,8 +146,8 @@
   <ItemGroup>
     <ClCompile Include="AssemblyInfo.cpp" />
     <ClCompile Include="IPCPeer.cpp" />
-    <ClCompile Include="Movie.cpp" />
-    <ClCompile Include="MovieList.cpp" />
+    <ClCompile Include="MovieWrapper.cpp" />
+    <ClCompile Include="MovieListWrapper.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Watchog.IPC\Watchog.IPC.vcxproj">

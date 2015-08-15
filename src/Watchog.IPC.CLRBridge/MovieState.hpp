@@ -4,7 +4,7 @@ namespace Watchog
 {
     namespace IPC
     {
-        // This must match to MovieState in SharedMemoryStructs.h!
+        // This must match to MovieState in SharedMemoryStructs.hpp!
         public enum class MovieState
         {
             Unknown = 0,

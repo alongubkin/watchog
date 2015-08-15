@@ -3,7 +3,7 @@
 #include "../Watchog.IPC/IPCPeer.hpp"
 
 #include "MovieState.hpp"
-#include "MovieList.hpp"
+#include "MovieListWrapper.hpp"
 
 namespace Watchog
 {
@@ -46,14 +46,14 @@ namespace Watchog
                 }
             }
 
-            void Reset(MovieList^ movieList)
+            void Reset(MovieListWrapper^ movieList)
             {
                 _peer->reset(*movieList->ToNative());
             }
 
-            MovieList^ GetAll()
+            MovieListWrapper^ GetAll()
             {
-                return gcnew MovieList(*_peer->get_all());
+                return gcnew MovieListWrapper(*_peer->get_all());
             }
 
         private:

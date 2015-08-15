@@ -7,13 +7,13 @@
     <ClInclude Include="IPCPeer.hpp">
       <Filter>CLRBridge</Filter>
     </ClInclude>
-    <ClInclude Include="Movie.hpp">
-      <Filter>CLRBridge</Filter>
-    </ClInclude>
-    <ClInclude Include="MovieList.hpp">
-      <Filter>CLRBridge</Filter>
-    </ClInclude>
     <ClInclude Include="MovieState.hpp">
+      <Filter>CLRBridge</Filter>
+    </ClInclude>
+    <ClInclude Include="MovieWrapper.hpp">
+      <Filter>CLRBridge</Filter>
+    </ClInclude>
+    <ClInclude Include="MovieListWrapper.hpp">
       <Filter>CLRBridge</Filter>
     </ClInclude>
   </ItemGroup>
@@ -24,10 +24,10 @@
     <ClCompile Include="IPCPeer.cpp">
       <Filter>CLRBridge</Filter>
     </ClCompile>
-    <ClCompile Include="Movie.cpp">
+    <ClCompile Include="MovieWrapper.cpp">
       <Filter>CLRBridge</Filter>
     </ClCompile>
-    <ClCompile Include="MovieList.cpp">
+    <ClCompile Include="MovieListWrapper.cpp">
       <Filter>CLRBridge</Filter>
     </ClCompile>
   </ItemGroup>
