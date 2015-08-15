@@ -6,6 +6,8 @@ using System.Linq;
 using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Forms;
+using Watchog.IPC;
+using Watchog.Persistence;
 using Application = System.Windows.Application;
 
 namespace Watchog.UI
@@ -15,11 +17,21 @@ namespace Watchog.UI
     /// </summary>
     public partial class App : Application
     {
+        private readonly IPCPeer _peer;
+        private readonly SharedMemoryListener _sharedMemoryListener;
+        private readonly Database _db;
+
         private NotifyIcon _notifyIcon;
         private MainWindow _mainWindow;
-
+        
         public App()
         {
+            _peer = new IPCPeer();
+            _db = new Database("db.sqlite");
+
+            _sharedMemoryListener = new SharedMemoryListener(_peer, OnSharedMemoryChanged);
+            _sharedMemoryListener.Start();
+
             InitializeTrayIcon();
         }
 
@@ -48,6 +60,19 @@ namespace Watchog.UI
             {
                 _mainWindow.WindowState = WindowState.Normal;
             }
+        }
+
+        private void OnSharedMemoryChanged(List<MovieWrapper> movies)
+        {
+            _db.ApplyChanges(movies);
+        }
+
+        protected override void OnExit(ExitEventArgs e)
+        {
+            _sharedMemoryListener.Dispose();
+            _peer.Dispose();
+
+            base.OnExit(e);
         }
     }
 }

@@ -116,6 +116,16 @@
   <ItemGroup>
     <Resource Include="Icons\WatchogIcon.ico" />
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Watchog.IPC.CLRBridge\Watchog.IPC.CLRBridge.vcxproj">
+      <Project>{5ec8dc06-fa90-40a7-a5e9-e03d9708b6fd}</Project>
+      <Name>Watchog.IPC.CLRBridge</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Watchog.Persistence\Watchog.Persistence.csproj">
+      <Project>{dbdbcbe6-be3a-4681-a81b-dfa4dcb41d9e}</Project>
+      <Name>Watchog.Persistence</Name>
+    </ProjectReference>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
