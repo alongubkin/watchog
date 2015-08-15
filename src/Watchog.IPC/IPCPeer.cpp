@@ -9,7 +9,8 @@ namespace ipc
     IPCPeer::IPCPeer() :
         _mutex(std::make_shared<Mutex>(Config::MUTEX_NAME())),
         _file_mapping(std::make_shared<FileMapping>(Config::SHARED_MEMORY_NAME(), Config::SHARED_MEMORY_SIZE)),
-        _shared_memory(std::make_shared<MappedViewOfFile>(_file_mapping, MappedViewOfFile::Access::ReadWrite))
+        _shared_memory(std::make_shared<MappedViewOfFile>(_file_mapping, MappedViewOfFile::Access::ReadWrite)),
+        _change_event(Config::CHANGE_EVENT_NAME(), false)
     {}
 
     const MovieState IPCPeer::get_movie_state(const std::wstring& path)
@@ -68,6 +69,8 @@ namespace ipc
 
         movie->state = state;
         list->version++;
+
+        _change_event.set();
     }
 
     MovieListPtr IPCPeer::get_all()

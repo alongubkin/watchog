@@ -37,6 +37,9 @@
     <ClInclude Include="SharedMemoryStructs.hpp">
       <Filter>Watchog IPC</Filter>
     </ClInclude>
+    <ClInclude Include="AutoResetEvent.hpp">
+      <Filter>Sync</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Mutex.cpp">
@@ -65,6 +68,9 @@
     </ClCompile>
     <ClCompile Include="SharedMovieListUtils.cpp">
       <Filter>Watchog IPC</Filter>
+    </ClCompile>
+    <ClCompile Include="AutoResetEvent.cpp">
+      <Filter>Sync</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>

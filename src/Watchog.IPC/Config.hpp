@@ -19,5 +19,7 @@ namespace ipc
 
         static const std::wstring MUTEX_NAME() { return L"WatchogMutex"; }
         static const std::chrono::seconds MUTEX_TIMEOUT() { return std::chrono::seconds(10); }
+
+        static const std::wstring CHANGE_EVENT_NAME() { return L"WatchogChangeEvent"; }
     };
 }

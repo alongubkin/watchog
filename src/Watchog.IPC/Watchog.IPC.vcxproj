@@ -20,6 +20,7 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="AutoCloseHandle.hpp" />
+    <ClInclude Include="AutoResetEvent.hpp" />
     <ClInclude Include="Config.hpp" />
     <ClInclude Include="FileMapping.hpp" />
     <ClInclude Include="IPCPeer.hpp" />
@@ -34,6 +35,7 @@
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="AutoCloseHandle.cpp" />
+    <ClCompile Include="AutoResetEvent.cpp" />
     <ClCompile Include="FileMapping.cpp" />
     <ClCompile Include="IPCPeer.cpp" />
     <ClCompile Include="LockedMutex.cpp" />
