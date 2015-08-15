@@ -1,4 +1,4 @@
-#include "stdafx.h"
+#include "stdafx.hpp"
 #include "WatchedOverlayIcon.hpp"
 
 using AutoGlobalUnlock = std::unique_ptr<std::remove_pointer<HDROP>::type, decltype(&GlobalUnlock)>;

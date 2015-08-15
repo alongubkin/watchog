@@ -37,13 +37,7 @@
     <ClInclude Include="WatchogShellExtension_i.h">
       <Filter>Generated Files</Filter>
     </ClInclude>
-    <ClInclude Include="dllmain.h">
-      <Filter>ATL Stuff</Filter>
-    </ClInclude>
     <ClInclude Include="Resource.h">
-      <Filter>ATL Stuff</Filter>
-    </ClInclude>
-    <ClInclude Include="stdafx.h">
       <Filter>ATL Stuff</Filter>
     </ClInclude>
     <ClInclude Include="targetver.h">
@@ -51,6 +45,12 @@
     </ClInclude>
     <ClInclude Include="WatchedOverlayIcon.hpp">
       <Filter>WatchedOverlayIcon</Filter>
+    </ClInclude>
+    <ClInclude Include="dllmain.hpp">
+      <Filter>ATL Stuff</Filter>
+    </ClInclude>
+    <ClInclude Include="stdafx.hpp">
+      <Filter>ATL Stuff</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

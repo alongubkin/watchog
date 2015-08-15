@@ -1,9 +1,9 @@
 // dllmain.cpp : Implementation of DllMain.
 
-#include "stdafx.h"
+#include "stdafx.hpp"
 #include "resource.h"
 #include "WatchogShellExtension_i.h"
-#include "dllmain.h"
+#include "dllmain.hpp"
 
 CWatchogShellExtensionModule _AtlModule;
 

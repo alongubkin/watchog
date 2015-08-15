@@ -1,7 +1,7 @@
-#include "stdafx.h"
+#include "stdafx.hpp"
 #include "resource.h"
 #include "WatchogShellExtension_i.h"
-#include "dllmain.h"
+#include "dllmain.hpp"
 
 using namespace ATL;
 
@@ -60,5 +60,3 @@ STDAPI DllInstall(BOOL bInstall, _In_opt_  LPCWSTR pszCmdLine)
 
     return hr;
 }
-
-
