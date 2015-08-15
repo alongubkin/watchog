@@ -1,7 +1,7 @@
 #pragma once
 
-#include "SharedMemoryStructs.h"
 #include "MappedViewOfFile.hpp"
+#include "SharedMemoryStructs.hpp"
 
 namespace ipc
 {    

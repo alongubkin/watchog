@@ -29,7 +29,7 @@
     <ClInclude Include="Movie.hpp" />
     <ClInclude Include="MovieList.hpp" />
     <ClInclude Include="Mutex.hpp" />
-    <ClInclude Include="SharedMemoryStructs.h" />
+    <ClInclude Include="SharedMemoryStructs.hpp" />
     <ClInclude Include="SharedMovieListUtils.hpp" />
   </ItemGroup>
   <ItemGroup>

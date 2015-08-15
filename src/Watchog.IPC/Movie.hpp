@@ -4,7 +4,7 @@
 #include <vector>
 #include <memory>
 
-#include "SharedMemoryStructs.h"
+#include "SharedMemoryStructs.hpp"
 
 namespace ipc
 {    
