@@ -12,32 +12,62 @@ namespace Watchog.Persistence
 {
     public class Database
     {
-        private readonly SQLiteConnection _db;
+        private readonly SQLiteAsyncConnection _db;
 
         static Database()
         {
             Mapper.CreateMap<MovieWrapper, Movie>();
+            Mapper.CreateMap<Movie, MovieWrapper>();
         }
 
         public Database(string path)
         {
-            _db = new SQLiteConnection(path);
-            _db.CreateTable<Movie>();
+            _db = new SQLiteAsyncConnection(path);
+            _db.CreateTableAsync<Movie>().Wait();
         }
 
-        public void ApplyChanges(List<Movie> movies)
+        public async Task ApplyChanges(List<Movie> movies)
         {
-            throw new NotImplementedException();
+            var dbMovies = await _db.Table<Movie>().ToListAsync();
+
+            var moviesToUpdate = new List<Movie>();
+            var moviesToInsert = new List<Movie>();
+            
+            foreach (var movie in movies)
+            {
+                var dbMovie = dbMovies.FirstOrDefault(p => 
+                    String.Equals(p.Path, movie.Path, StringComparison.CurrentCultureIgnoreCase));
+
+                if (dbMovie == null)
+                {
+                    moviesToInsert.Add(movie);
+                }
+                else
+                {           
+                    moviesToUpdate.Add(movie.WithId(dbMovie.Id));
+                }
+            }
+
+            await Task.WhenAll(_db.UpdateAllAsync(moviesToUpdate),
+                               _db.InsertAllAsync(moviesToInsert));
         }
 
-        public void ApplyChanges(List<MovieWrapper> movies)
+        public Task ApplyChanges(List<MovieWrapper> movies)
         {
-            ApplyChanges(Mapper.Map<List<Movie>>(movies));
+            return ApplyChanges(Mapper.Map<List<Movie>>(movies));
         }
 
-        public List<Movie> GetAll()
+        public async Task<List<Movie>> GetAll()
         {
-            throw new NotImplementedException();
-        } 
+            return await _db.Table<Movie>().ToListAsync();
+        }
+
+        public async Task<List<MovieWrapper>> GetAllAsWrappers()
+        {
+            var movies = await _db.Table<Movie>().ToListAsync();
+            var wrappers = Mapper.Map<List<MovieWrapper>>(movies);
+
+            return wrappers;
+        }
     }
 }

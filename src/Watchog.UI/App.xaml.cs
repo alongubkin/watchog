@@ -32,6 +32,15 @@ namespace Watchog.UI
             _sharedMemoryListener = new SharedMemoryListener(_peer, OnSharedMemoryChanged);
             _sharedMemoryListener.Start();
 
+            _db.GetAllAsWrappers().ContinueWith((movies) =>
+            {
+                _peer.Reset(new MovieListWrapper()
+                {
+                    Version = 1,
+                    Movies = movies.Result
+                });
+            });
+
             InitializeTrayIcon();
         }
 
@@ -64,7 +73,7 @@ namespace Watchog.UI
 
         private void OnSharedMemoryChanged(List<MovieWrapper> movies)
         {
-            _db.ApplyChanges(movies);
+            _db.ApplyChanges(movies).Wait();
         }
 
         protected override void OnExit(ExitEventArgs e)

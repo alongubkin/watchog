@@ -5,7 +5,7 @@
 #include "Config.hpp"
 #include "MappedViewOfFile.hpp"
 #include "Mutex.hpp"
-#include "AutoResetEvent.hpp"
+#include "ManualResetEvent.hpp"
 #include "MovieList.hpp"
 #include "SharedMemoryStructs.hpp"
 
@@ -36,6 +36,6 @@ namespace ipc
         MutexPtr _mutex;
         FileMappingPtr _file_mapping;
         MappedViewOfFilePtr _shared_memory;
-        AutoResetEvent _change_event;
+        ManualResetEvent _change_event;
     };
 }

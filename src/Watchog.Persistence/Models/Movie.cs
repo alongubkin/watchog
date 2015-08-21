@@ -17,5 +17,11 @@ namespace Watchog.Persistence.Models
         public string Path { get; set; }
 
         public MovieState State { get; set; }
+
+        public Movie WithId(int id)
+        {
+            this.Id = id;
+            return this;
+        }
     }
 }

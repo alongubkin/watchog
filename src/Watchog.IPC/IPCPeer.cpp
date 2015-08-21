@@ -86,6 +86,7 @@ namespace ipc
         for (uint32_t i = 0; i < shared_movies->count; i++)
         {
             movies->get_movies()->emplace_back(Movie(shared_movie->path, shared_movie->state));
+            shared_movie = SharedMovieListUtils::get_next_movie(shared_movie);
         }
 
         return movies;

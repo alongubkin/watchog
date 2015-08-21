@@ -12,6 +12,7 @@ namespace Watchog
         public ref class MovieListWrapper sealed
         {
         public:
+            MovieListWrapper() {};
             virtual ~MovieListWrapper() {};
 
             property System::UInt32 Version;
@@ -41,9 +42,6 @@ namespace Watchog
 
                 return movies;
             }
-
-        private:
-            MovieListWrapper() {};
         };
     }
 }
