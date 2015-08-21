@@ -11,7 +11,6 @@ namespace Watchog.Persistence
     public class SharedMemoryListener : IDisposable
     {
         private const string EventName = "WatchogChangeEvent";
-        private static readonly int EventTimeout = (int) TimeSpan.FromHours(10).TotalMilliseconds;
 
         private readonly EventWaitHandle _waitHandle;
         private RegisteredWaitHandle _registeredWaitHandle;
@@ -35,7 +34,7 @@ namespace Watchog.Persistence
             } 
 
             _registeredWaitHandle = ThreadPool.RegisterWaitForSingleObject(_waitHandle,
-                OnSharedMemoryChange, null, EventTimeout, true);
+                OnSharedMemoryChange, null, Timeout.Infinite, true);
         }
 
         public void Stop()
