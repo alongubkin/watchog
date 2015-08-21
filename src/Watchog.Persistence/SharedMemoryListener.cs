@@ -11,9 +11,10 @@ namespace Watchog.Persistence
     public class SharedMemoryListener : IDisposable
     {
         private const string EventName = "WatchogChangeEvent";
+        public static readonly TimeSpan EventTimeout = TimeSpan.FromSeconds(5);
 
         private readonly EventWaitHandle _waitHandle;
-        private RegisteredWaitHandle _registeredWaitHandle;
+        private volatile bool _exit;
         private readonly IPCPeer _peer;
         private readonly Action<List<MovieWrapper>> _callback;
         private uint? _lastSyncedVersion;
@@ -24,42 +25,35 @@ namespace Watchog.Persistence
             _lastSyncedVersion = null;
             _waitHandle = new EventWaitHandle(false, EventResetMode.ManualReset, EventName);
             _callback = callback;
+            _exit = false;
         }
 
         public void Start()
         {
-            if (_registeredWaitHandle != null)
+            new Thread(() =>
             {
-                Stop();
-            } 
+                _waitHandle.WaitOne(EventTimeout);
 
-            _registeredWaitHandle = ThreadPool.RegisterWaitForSingleObject(_waitHandle,
-                OnSharedMemoryChange, null, Timeout.Infinite, true);
+                while (!_exit)
+                {
+                    var list = _peer.GetAll();
+
+                    if (!_lastSyncedVersion.HasValue || _lastSyncedVersion < list.Version)
+                    {
+                        _callback(list.Movies);
+                        _lastSyncedVersion = list.Version;
+                    }
+
+                    _waitHandle.Reset();
+
+                    _waitHandle.WaitOne(EventTimeout);
+                }
+            }).Start();
         }
 
         public void Stop()
         {
-            _registeredWaitHandle.Unregister(_waitHandle);
-        }
-
-        private void OnSharedMemoryChange(object state, bool timedOut)
-        {
-            if (timedOut)
-            {
-                Start();
-                return;
-            }
-
-            var list = _peer.GetAll();
-            
-            if (!_lastSyncedVersion.HasValue || _lastSyncedVersion < list.Version)
-            {
-                _callback(list.Movies);
-                _lastSyncedVersion = list.Version;
-            }
-
-            _waitHandle.Reset();
-            Start();
+            _exit = true;
         }
 
         public void Dispose()

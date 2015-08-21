@@ -26,5 +26,5 @@ void PluginState::mark_as_watched()
     _current_movie_state = ipc::MovieState::Watched;
 
     // Refresh file
-    SHChangeNotify(SHCNE_UPDATEITEM, SHCNF_PATH, _current_file_path.c_str(), nullptr);
+    SHChangeNotify(SHCNE_UPDATEITEM, SHCNF_PATHW | SHCNF_FLUSHNOWAIT, _current_file_path.c_str(), nullptr);
 }

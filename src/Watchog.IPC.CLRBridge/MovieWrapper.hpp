@@ -10,6 +10,7 @@ namespace Watchog
         public ref class MovieWrapper sealed
         {
         public:
+            MovieWrapper() {};
             virtual ~MovieWrapper() {};
 
             property System::String^ Path;
@@ -36,9 +37,6 @@ namespace Watchog
                     System::Runtime::InteropServices::Marshal::FreeHGlobal(System::IntPtr((void*)native_path));
                 }
             }
-
-        private:
-            MovieWrapper() {};
         };
     }
 }

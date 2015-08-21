@@ -17,7 +17,8 @@ namespace Watchog.Persistence
         static Database()
         {
             Mapper.CreateMap<MovieWrapper, Movie>();
-            Mapper.CreateMap<Movie, MovieWrapper>();
+            Mapper.CreateMap<Movie, MovieWrapper>()
+                .ConstructUsing((Func<ResolutionContext, MovieWrapper>) (r => new MovieWrapper()));
         }
 
         public Database(string path)
@@ -65,9 +66,7 @@ namespace Watchog.Persistence
         public async Task<List<MovieWrapper>> GetAllAsWrappers()
         {
             var movies = await _db.Table<Movie>().ToListAsync();
-            var wrappers = Mapper.Map<List<MovieWrapper>>(movies);
-
-            return wrappers;
+            return Mapper.Map<List<MovieWrapper>>(movies);
         }
     }
 }

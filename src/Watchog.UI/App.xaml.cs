@@ -17,47 +17,61 @@ namespace Watchog.UI
     /// </summary>
     public partial class App : Application
     {
-        private readonly IPCPeer _peer;
-        private readonly SharedMemoryListener _sharedMemoryListener;
-        private readonly Database _db;
+        private IPCPeer _peer;
+        private SharedMemoryListener _sharedMemoryListener;
+        private Database _db;
 
-        private NotifyIcon _notifyIcon;
+        private readonly NotifyIcon _notifyIcon;
         private MainWindow _mainWindow;
         
         public App()
         {
-            _peer = new IPCPeer();
-            _db = new Database("db.sqlite");
+            ShutdownMode = ShutdownMode.OnExplicitShutdown;
 
-            _sharedMemoryListener = new SharedMemoryListener(_peer, OnSharedMemoryChanged);
-            _sharedMemoryListener.Start();
-
-            _db.GetAllAsWrappers().ContinueWith((movies) =>
-            {
-                _peer.Reset(new MovieListWrapper()
-                {
-                    Version = 1,
-                    Movies = movies.Result
-                });
-            });
-
-            InitializeTrayIcon();
-        }
-
-        void InitializeTrayIcon()
-        {
             _notifyIcon = new NotifyIcon
             {
                 Text = "Watchog",
                 Icon = Watchog.UI.Properties.Resources.WatchogIcon,
-                Visible = true
+                Visible = true,
+                ContextMenu = new ContextMenu(new []
+                {
+                    new MenuItem("Exit", (sender, e) =>
+                    {
+                        Shutdown();
+                    })
+                })
             };
+
             _notifyIcon.MouseClick += NotifyIconOnMouseClick;
+            InitializeIpc();
+        }
+
+        private void InitializeIpc()
+        {
+            Task.Run(async () =>
+            {
+                _peer = new IPCPeer();
+                _db = new Database("db.sqlite");
+
+                var movies = await _db.GetAllAsWrappers();
+                _peer.Reset(new MovieListWrapper
+                {
+                    Movies = movies
+                });
+
+                foreach (var movie in movies)
+                {
+                    ShellUtils.RefreshShellIcon(movie.Path);
+                }
+
+                _sharedMemoryListener = new SharedMemoryListener(_peer, OnSharedMemoryChanged);
+                _sharedMemoryListener.Start();
+            });
         }
 
         private void NotifyIconOnMouseClick(object sender, MouseEventArgs mouseEventArgs)
         {
-            if (_mainWindow == null)
+            if (_mainWindow == null || !_mainWindow.IsLoaded)
             {
                 _mainWindow = new MainWindow();
             }
@@ -78,8 +92,9 @@ namespace Watchog.UI
 
         protected override void OnExit(ExitEventArgs e)
         {
-            _sharedMemoryListener.Dispose();
-            _peer.Dispose();
+            _notifyIcon.Dispose();
+            _sharedMemoryListener?.Dispose();
+            _peer?.Dispose();
 
             base.OnExit(e);
         }

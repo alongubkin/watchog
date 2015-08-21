@@ -75,6 +75,7 @@ namespace ipc
 
     MovieListPtr IPCPeer::get_all()
     {
+        LockedMutex lock(_mutex, Config::MUTEX_TIMEOUT());
         auto shared_movies = _shared_memory->get<SharedMovieList>();
 
         // Create the movies vector
@@ -109,7 +110,7 @@ namespace ipc
         {
             // Copy data to the shared memory movie instance
             shared_movie->state = movie.get_state();
-            if (0 != wcscpy_s(shared_movie->path, movie.get_path().size(), movie.get_path().c_str()))
+            if (0 != wcscpy_s(shared_movie->path, movie.get_path().size() + 1, movie.get_path().c_str()))
             {
                 throw StringException();
             }
