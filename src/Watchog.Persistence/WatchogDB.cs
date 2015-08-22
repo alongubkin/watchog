@@ -10,18 +10,18 @@ using Watchog.Persistence.Models;
 
 namespace Watchog.Persistence
 {
-    public class Database
+    public class WatchogDB
     {
         private readonly SQLiteAsyncConnection _db;
 
-        static Database()
+        static WatchogDB()
         {
             Mapper.CreateMap<MovieWrapper, Movie>();
             Mapper.CreateMap<Movie, MovieWrapper>()
                 .ConstructUsing((Func<ResolutionContext, MovieWrapper>) (r => new MovieWrapper()));
         }
 
-        public Database(string path)
+        public WatchogDB(string path)
         {
             _db = new SQLiteAsyncConnection(path);
             _db.CreateTableAsync<Movie>().Wait();
@@ -65,8 +65,7 @@ namespace Watchog.Persistence
 
         public async Task<List<MovieWrapper>> GetAllAsWrappers()
         {
-            var movies = await _db.Table<Movie>().ToListAsync();
-            return Mapper.Map<List<MovieWrapper>>(movies);
+            return Mapper.Map<List<MovieWrapper>>(await GetAll());
         }
     }
 }

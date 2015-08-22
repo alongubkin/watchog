@@ -19,7 +19,7 @@ namespace Watchog.UI
     {
         private IPCPeer _peer;
         private SharedMemoryListener _sharedMemoryListener;
-        private Database _db;
+        private WatchogDB _db;
 
         private readonly NotifyIcon _notifyIcon;
         private MainWindow _mainWindow;
@@ -51,7 +51,7 @@ namespace Watchog.UI
             Task.Run(async () =>
             {
                 _peer = new IPCPeer();
-                _db = new Database("db.sqlite");
+                _db = new WatchogDB("db.sqlite");
 
                 var movies = await _db.GetAllAsWrappers();
                 _peer.Reset(new MovieListWrapper
