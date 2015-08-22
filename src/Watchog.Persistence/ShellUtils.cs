@@ -5,10 +5,8 @@ using System.Runtime.InteropServices;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Watchog.UI
+namespace Watchog.Persistence
 {
-    
-    
     static class ShellUtils
     {
         public const int UpdateItem = 0x2000;
@@ -28,7 +26,7 @@ namespace Watchog.UI
             try
             {
                 SHChangeNotify(UpdateItem,
-                               SHCNF_PATHW|SHCNF_FLUSHNOWAIT,
+                               SHCNF_PATHW | SHCNF_FLUSHNOWAIT,
                                pathPtr,
                                IntPtr.Zero);
             }

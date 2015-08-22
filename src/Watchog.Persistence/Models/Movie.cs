@@ -8,7 +8,7 @@ using Watchog.IPC;
 
 namespace Watchog.Persistence.Models
 {
-    public class Movie
+    public sealed class Movie
     {
         [PrimaryKey, AutoIncrement]
         public int Id { get; set; }

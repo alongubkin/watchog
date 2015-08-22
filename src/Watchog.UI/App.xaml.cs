@@ -17,16 +17,19 @@ namespace Watchog.UI
     /// </summary>
     public partial class App : Application
     {
-        private IPCPeer _peer;
-        private SharedMemoryListener _sharedMemoryListener;
-        private WatchogDB _db;
 
+        private PersistenceContext _persistence;
         private readonly NotifyIcon _notifyIcon;
         private MainWindow _mainWindow;
         
         public App()
         {
             ShutdownMode = ShutdownMode.OnExplicitShutdown;
+
+            PersistenceContext.Create("db.sqlite").ContinueWith((task) =>
+            {
+                _persistence = task.Result;
+            });
 
             _notifyIcon = new NotifyIcon
             {
@@ -43,36 +46,6 @@ namespace Watchog.UI
             };
 
             _notifyIcon.MouseClick += NotifyIconOnMouseClick;
-            InitializeIpc();
-        }
-
-        private void InitializeIpc()
-        {
-            Task.Run(async () =>
-            {
-                _peer = new IPCPeer();
-                _db = new WatchogDB("db.sqlite");
-
-                var movies = await _db.GetAllAsWrappers();
-                _peer.Reset(new MovieListWrapper
-                {
-                    Movies = movies
-                });
-
-                foreach (var movie in movies)
-                {
-                    ShellUtils.RefreshShellIcon(movie.Path);
-                }
-
-                _sharedMemoryListener = new SharedMemoryListener(_peer);
-                _sharedMemoryListener.SharedMemoryChanged += OnSharedMemoryChanged;
-                _sharedMemoryListener.Start();
-            });
-        }
-
-        private void OnSharedMemoryChanged(List<MovieWrapper> movies)
-        {
-            _db.ApplyChanges(movies).Wait();
         }
 
         private void NotifyIconOnMouseClick(object sender, MouseEventArgs mouseEventArgs)
@@ -94,8 +67,7 @@ namespace Watchog.UI
         protected override void OnExit(ExitEventArgs e)
         {
             _notifyIcon.Dispose();
-            _sharedMemoryListener?.Dispose();
-            _peer?.Dispose();
+            _persistence?.Dispose();
 
             base.OnExit(e);
         }

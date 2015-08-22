@@ -10,7 +10,7 @@ using Watchog.Persistence.Models;
 
 namespace Watchog.Persistence
 {
-    public class WatchogDB
+    public sealed class WatchogDB
     {
         private readonly SQLiteAsyncConnection _db;
 
