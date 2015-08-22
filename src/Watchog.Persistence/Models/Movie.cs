@@ -18,9 +18,20 @@ namespace Watchog.Persistence.Models
 
         public MovieState State { get; set; }
 
+        public DateTime UpdateDate { get; set; }
+
+        [Ignore]
+        public string Name => System.IO.Path.GetFileNameWithoutExtension(Path);
+
         public Movie WithId(int id)
         {
             this.Id = id;
+            return this;
+        }
+
+        public Movie UpdatedNow()
+        {
+            UpdateDate = DateTime.UtcNow;
             return this;
         }
     }

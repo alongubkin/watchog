@@ -11,7 +11,8 @@ namespace Watchog.Persistence
     {
         private IPCPeer _peer;
         private SharedMemoryListener _sharedMemoryListener;
-        private WatchogDB _db;
+
+        public event Action MoviesUpdated;
 
         private PersistenceContext()
         {}
@@ -21,10 +22,10 @@ namespace Watchog.Persistence
             var context = new PersistenceContext
             {
                 _peer = new IPCPeer(),
-                _db = new WatchogDB(dbPath)
+                Database = new WatchogDB(dbPath)
             };
 
-            var movies = await context._db.GetAllAsWrappers();
+            var movies = await context.Database.GetAllAsWrappers();
             context._peer.Reset(new MovieListWrapper
             {
                 Movies = movies
@@ -42,15 +43,23 @@ namespace Watchog.Persistence
             return context;
         }
 
+        public WatchogDB Database { get; private set; }
+    
         private void OnSharedMemoryChanged(List<MovieWrapper> movies)
         {
-            _db.ApplyChanges(movies).Wait();
+            Database.ApplyChanges(movies).Wait();
+            OnMoviesUpdated();
         }
 
         public void Dispose()
         {
             _sharedMemoryListener.Dispose();
             _peer.Dispose();
+        }
+
+        private void OnMoviesUpdated()
+        {
+            MoviesUpdated?.Invoke();
         }
     }
 }

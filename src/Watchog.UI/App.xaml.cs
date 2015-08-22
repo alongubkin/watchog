@@ -17,8 +17,6 @@ namespace Watchog.UI
     /// </summary>
     public partial class App : Application
     {
-
-        private PersistenceContext _persistence;
         private readonly NotifyIcon _notifyIcon;
         private MainWindow _mainWindow;
         
@@ -28,7 +26,7 @@ namespace Watchog.UI
 
             PersistenceContext.Create("db.sqlite").ContinueWith((task) =>
             {
-                _persistence = task.Result;
+                PersistenceContext = task.Result;
             });
 
             _notifyIcon = new NotifyIcon
@@ -47,6 +45,8 @@ namespace Watchog.UI
 
             _notifyIcon.MouseClick += NotifyIconOnMouseClick;
         }
+
+        public PersistenceContext PersistenceContext { get; private set; }
 
         private void NotifyIconOnMouseClick(object sender, MouseEventArgs mouseEventArgs)
         {
@@ -67,7 +67,7 @@ namespace Watchog.UI
         protected override void OnExit(ExitEventArgs e)
         {
             _notifyIcon.Dispose();
-            _persistence?.Dispose();
+            PersistenceContext?.Dispose();
 
             base.OnExit(e);
         }

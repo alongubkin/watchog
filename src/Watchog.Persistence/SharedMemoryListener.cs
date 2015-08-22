@@ -8,7 +8,7 @@ using Watchog.IPC;
 
 namespace Watchog.Persistence
 {
-    public class SharedMemoryListener : IDisposable
+    public sealed class SharedMemoryListener : IDisposable
     {
         private const string EventName = "WatchogChangeEvent";
         public static readonly TimeSpan EventTimeout = TimeSpan.FromSeconds(5);
@@ -45,7 +45,6 @@ namespace Watchog.Persistence
                     }
 
                     _waitHandle.Reset();
-
                     _waitHandle.WaitOne(EventTimeout);
                 }
             }).Start();
@@ -61,7 +60,7 @@ namespace Watchog.Persistence
             Stop();
         }
 
-        protected virtual void OnSharedMemoryChanged(List<MovieWrapper> movies)
+        private void OnSharedMemoryChanged(List<MovieWrapper> movies)
         {
             SharedMemoryChanged?.Invoke(movies);
         }

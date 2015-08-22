@@ -41,11 +41,11 @@ namespace Watchog.Persistence
 
                 if (dbMovie == null)
                 {
-                    moviesToInsert.Add(movie);
+                    moviesToInsert.Add(movie.UpdatedNow());
                 }
-                else
-                {           
-                    moviesToUpdate.Add(movie.WithId(dbMovie.Id));
+                else if (dbMovie.State != movie.State)
+                {
+                    moviesToUpdate.Add(movie.UpdatedNow().WithId(dbMovie.Id));
                 }
             }
 
@@ -66,6 +66,16 @@ namespace Watchog.Persistence
         public async Task<List<MovieWrapper>> GetAllAsWrappers()
         {
             return Mapper.Map<List<MovieWrapper>>(await GetAll());
+        }
+
+        public async Task<List<Movie>> GetRecentlyWatched(int page, int moviesInPage = 10)
+        {
+            return await _db.Table<Movie>()
+                .Where(movie => movie.State == MovieState.Watched)
+                .OrderByDescending(movie => movie.UpdateDate)
+                .Skip(page*moviesInPage)
+                .Take(moviesInPage)
+                .ToListAsync();
         }
     }
 }

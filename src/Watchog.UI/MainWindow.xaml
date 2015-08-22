@@ -4,6 +4,7 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Watchog.UI"
+        xmlns:converters="clr-namespace:Watchog.UI.Converters"
         mc:Ignorable="d"
         WindowStyle="None"
         AllowsTransparency="True"
@@ -11,6 +12,10 @@
         ResizeMode="NoResize"
         Title="Watchog" Height="480" Width="640"
         Style="{StaticResource OpenSans-Regular}">
+    <Window.Resources>
+        <converters:VideoThumbnailExtractor x:Key="VideoThumbnailExtractor" />
+        <converters:DateTimeHumanizer x:Key="DateTimeHumanizer" />
+    </Window.Resources>
     <Grid Margin="20" Background="#16171a">
         <Grid.Effect>
             <DropShadowEffect BlurRadius="15" Direction="-90" RenderingBias="Quality" ShadowDepth="2"/>
@@ -65,8 +70,40 @@
                             </Image>
                         </ControlTemplate>
                     </Button.Template>
-                </Button>                
-            </StackPanel> 
+                </Button>
+            </StackPanel>
+        </Grid>
+        <Grid Margin="0,40,0,0">
+            <ListView x:Name="MoviesListView" 
+                     HorizontalAlignment="Stretch" 
+                     VerticalAlignment="Stretch" 
+                     Background="Transparent"
+                     BorderBrush="Transparent">
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <StackPanel Orientation="Horizontal">
+                            <Image Source="{Binding Path=Path, 
+                                                    Converter={StaticResource VideoThumbnailExtractor},
+                                                    IsAsync=True}"
+                                   Width="100" />
+                            <Image Source="./Icons/Watched.png" 
+                                   Width="32" 
+                                   Height="32"
+                                   HorizontalAlignment="Right"
+                                   Margin="10,0,0,0" />
+                            <StackPanel Margin="10,0,0,0" VerticalAlignment="Center" >
+                                <TextBlock Text="{Binding Name}" 
+                                       Foreground="White" 
+                                       FontSize="20"></TextBlock>
+                                <TextBlock Text="{Binding UpdateDate,
+                                                          Converter={StaticResource DateTimeHumanizer}}" 
+                                       Foreground="#dddddd" 
+                                       FontSize="12"></TextBlock>
+                            </StackPanel>
+                        </StackPanel>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
         </Grid>
     </Grid>
 </Window>
