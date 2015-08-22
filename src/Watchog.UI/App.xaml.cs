@@ -43,7 +43,7 @@ namespace Watchog.UI
                 })
             };
 
-            _notifyIcon.MouseClick += NotifyIconOnMouseClick;
+            // _notifyIcon.MouseClick += NotifyIconOnMouseClick;
         }
 
         public PersistenceContext PersistenceContext { get; private set; }
