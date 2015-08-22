@@ -64,9 +64,15 @@ namespace Watchog.UI
                     ShellUtils.RefreshShellIcon(movie.Path);
                 }
 
-                _sharedMemoryListener = new SharedMemoryListener(_peer, OnSharedMemoryChanged);
+                _sharedMemoryListener = new SharedMemoryListener(_peer);
+                _sharedMemoryListener.SharedMemoryChanged += OnSharedMemoryChanged;
                 _sharedMemoryListener.Start();
             });
+        }
+
+        private void OnSharedMemoryChanged(List<MovieWrapper> movies)
+        {
+            _db.ApplyChanges(movies).Wait();
         }
 
         private void NotifyIconOnMouseClick(object sender, MouseEventArgs mouseEventArgs)
@@ -83,11 +89,6 @@ namespace Watchog.UI
             {
                 _mainWindow.WindowState = WindowState.Normal;
             }
-        }
-
-        private void OnSharedMemoryChanged(List<MovieWrapper> movies)
-        {
-            _db.ApplyChanges(movies).Wait();
         }
 
         protected override void OnExit(ExitEventArgs e)

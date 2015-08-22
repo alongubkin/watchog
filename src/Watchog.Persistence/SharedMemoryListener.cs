@@ -16,16 +16,16 @@ namespace Watchog.Persistence
         private readonly EventWaitHandle _waitHandle;
         private volatile bool _exit;
         private readonly IPCPeer _peer;
-        private readonly Action<List<MovieWrapper>> _callback;
         private uint? _lastSyncedVersion;
 
-        public SharedMemoryListener(IPCPeer peer, Action<List<MovieWrapper>> callback)
+        public event Action<List<MovieWrapper>> SharedMemoryChanged;
+
+        public SharedMemoryListener(IPCPeer peer)
         {
-            _peer = peer;
-            _lastSyncedVersion = null;
             _waitHandle = new EventWaitHandle(false, EventResetMode.ManualReset, EventName);
-            _callback = callback;
             _exit = false;
+            _peer = peer;
+            _lastSyncedVersion = null;   
         }
 
         public void Start()
@@ -40,7 +40,7 @@ namespace Watchog.Persistence
 
                     if (!_lastSyncedVersion.HasValue || _lastSyncedVersion < list.Version)
                     {
-                        _callback(list.Movies);
+                        OnSharedMemoryChanged(list.Movies);
                         _lastSyncedVersion = list.Version;
                     }
 
@@ -59,6 +59,11 @@ namespace Watchog.Persistence
         public void Dispose()
         {
             Stop();
+        }
+
+        protected virtual void OnSharedMemoryChanged(List<MovieWrapper> movies)
+        {
+            SharedMemoryChanged?.Invoke(movies);
         }
     }
 }
