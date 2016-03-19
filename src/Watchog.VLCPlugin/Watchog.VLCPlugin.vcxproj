@@ -164,11 +164,9 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="PluginState.cpp" />
     <ClCompile Include="VLCPlugin.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="PluginState.hpp" />
     <ClInclude Include="VLCPlugin.hpp" />
     <ClInclude Include="vlc_includes.h" />
     <ClInclude Include="vlc_interface.h" />

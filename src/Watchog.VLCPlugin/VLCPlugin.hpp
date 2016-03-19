@@ -1,7 +1,7 @@
 #pragma once
 
 #include "vlc_includes.h"
-#include "PluginState.hpp"
+#include "../Watchog.IPC/PluginState.hpp"
 
 struct intf_sys_t
 {

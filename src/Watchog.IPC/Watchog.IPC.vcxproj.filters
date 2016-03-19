@@ -40,6 +40,9 @@
     <ClInclude Include="ManualResetEvent.hpp">
       <Filter>Sync</Filter>
     </ClInclude>
+    <ClInclude Include="PluginState.hpp">
+      <Filter>PluginState</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Mutex.cpp">
@@ -72,6 +75,9 @@
     <ClCompile Include="ManualResetEvent.cpp">
       <Filter>Sync</Filter>
     </ClCompile>
+    <ClCompile Include="PluginState.cpp">
+      <Filter>PluginState</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <Filter Include="IPC Internals">
@@ -91,6 +97,9 @@
     </Filter>
     <Filter Include="Models">
       <UniqueIdentifier>{b5171529-07b7-44d2-be11-546b693e8569}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="PluginState">
+      <UniqueIdentifier>{225239a1-d57f-4e6a-90c4-e214cf68e52a}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
 </Project>
