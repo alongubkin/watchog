@@ -3,11 +3,9 @@
   <ItemGroup>
     <ClInclude Include="vlc_interface.h" />
     <ClInclude Include="vlc_includes.h" />
-    <ClInclude Include="PluginState.hpp" />
     <ClInclude Include="VLCPlugin.hpp" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="VLCPlugin.cpp" />
-    <ClCompile Include="PluginState.cpp" />
   </ItemGroup>
 </Project>
